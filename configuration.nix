@@ -141,6 +141,7 @@
   environment.systemPackages = with pkgs; [
     coreutils-full
     git
+    neofetch
     nfs-utils
     rclone
     vim

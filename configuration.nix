@@ -102,6 +102,7 @@
     packages = with pkgs; [
       alejandra
       firefox
+      bat
       brave
       evince
       eza

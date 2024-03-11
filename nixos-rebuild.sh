@@ -9,12 +9,11 @@ CONF_DIR=$HOME/nixos/
 SERVER_DIR=$HOME/share/backups/nixos/$CONF_DIR
 
 set -e
-pushd $CONF_DIR
-if [[ -n $(git status --porcelain) ]]; then
-    echo "There are no changes to commit."
+pushd $CONF_DIR >/dev/null
+if [ -z "$(git status --porcelain)" ]; then
+    echo "There are no configuration changes."
     exit 1
 fi
-exit
 alejandra . >/dev/null
 git diff -U0 *.nix
 echo "NixOS Rebuilding..."

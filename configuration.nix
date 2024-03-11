@@ -232,7 +232,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 1w";
+    options = "--delete-older-than 4w";
   };
 
   # Optimize storage

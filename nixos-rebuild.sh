@@ -14,7 +14,7 @@ if [ -z "$(git status --porcelain)" ]; then
     echo "There are no configuration changes."
     exit 1
 fi
-alejandra . >/dev/null
+alejandra . &>/dev/null
 git diff -U0 *.nix
 echo "NixOS Rebuilding..."
 #sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && false)

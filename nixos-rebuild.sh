@@ -24,4 +24,4 @@ git commit -am "$current"
 popd
 
 # Backup ~/nixos/ to server.
-rsync -avzH --delete $CONF_DIR $SERVER_DIR
+rsync -avzH --delete --info=progress2 $CONF_DIR $SERVER_DIR

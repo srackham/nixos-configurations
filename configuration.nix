@@ -114,6 +114,7 @@
       gnome.gnome-terminal
       gnome.gnome-tweaks
       libreoffice
+      nushell
       vlc
       vscode
     ];
@@ -146,6 +147,7 @@
   environment.systemPackages = with pkgs; [
     coreutils-full
     git
+    lsb-release
     neofetch
     nfs-utils
     rclone

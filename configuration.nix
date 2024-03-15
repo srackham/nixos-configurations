@@ -81,6 +81,18 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable cron service.
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      # Test job.
+      # "*/5 * * * *      srackham    date >> /tmp/cron.log"
+
+      # Copy local projects to/from server.
+      "20 8,14,18  * * * srackham /home/srackham/bin/copy-projects.sh > /dev/null"
+    ];
+  };
+
   programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -146,6 +158,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     coreutils-full
+    cron
     git
     lsb-release
     neofetch

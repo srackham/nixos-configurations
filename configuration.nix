@@ -160,6 +160,7 @@
     coreutils-full
     cron
     git
+    killall
     lsb-release
     neofetch
     nfs-utils
@@ -238,6 +239,9 @@
     "L /home/srackham/bin - srackham users - /home/srackham/share/bin"
     "L /home/srackham/doc - srackham users - /home/srackham/share/doc"
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
+    # Create local projects directory.
+    "d /home/srackham/local 0755 srackham users"
+    "d /home/srackham/local/projects 0755 srackham users"
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

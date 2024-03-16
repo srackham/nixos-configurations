@@ -127,6 +127,7 @@
       gnome.gnome-tweaks
       libreoffice
       nushell
+      ripgrep
       vlc
       vscode
     ];

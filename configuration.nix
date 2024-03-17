@@ -125,6 +125,7 @@
       gnome.dconf-editor
       gnome.gnome-terminal
       gnome.gnome-tweaks
+      jq
       libreoffice
       nushell
       ripgrep

@@ -9,19 +9,15 @@ CONF_DIR=$HOME/nixos/
 SERVER_DIR=$HOME/share/backups/nixos/$CONF_DIR
 
 set -e
+
 pushd $CONF_DIR >/dev/null
-if [ -z "$(git status --porcelain)" ]; then
-    echo "There are no configuration changes."
-else
-    alejandra . &>/dev/null
-    git diff -U0 *.nix
-    echo "NixOS Rebuilding..."
-    #sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && false)
-    sudo nixos-rebuild switch
-    current=$(nixos-rebuild list-generations | grep current)
-    git commit -am "$current"
-fi
+alejandra . &>/dev/null
+git diff
+echo "Rebuilding NixOS..."
+sudo nixos-rebuild switch
+msg=$(nixos-rebuild list-generations --json | jq -r '.[] | select(.current == true) | "generation: \(.generation), date: \(.date), nixosVersion: \(.nixosVersion), kernelVersion: \(.kernelVersion)"')
+git commit -am "$msg"
 popd
 
 # Backup ~/nixos/ to server.
-rsync -avzH --delete --info=progress2 $CONF_DIR $SERVER_DIR
+rsync -azH --delete --info=progress2 $CONF_DIR $SERVER_DIR

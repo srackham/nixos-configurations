@@ -127,9 +127,6 @@
       gnome.gnome-tweaks
       jq
       libreoffice
-      # nixd generates build error: insecure version of `nix-2.16.2`
-      # https://www.reddit.com/r/NixOS/comments/1bfisi1/comment/kv10amu/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
-      # nixd
       nushell
       ripgrep
       vlc

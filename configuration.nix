@@ -130,6 +130,7 @@
       gnome.gnome-tweaks
       jq
       libreoffice
+      menulibre
       nushell
       ripgrep
       vlc

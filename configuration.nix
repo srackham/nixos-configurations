@@ -118,6 +118,10 @@
       alejandra
       bat
       brave
+      xclip
+      deno
+      gnumake
+      tesseract
       chezmoi
       evince
       eza

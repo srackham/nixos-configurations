@@ -93,7 +93,7 @@
     ];
   };
 
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.guest = {
@@ -113,7 +113,6 @@
     description = "Stuart Rackham";
     group = "srackham";
     extraGroups = ["users" "networkmanager" "wheel"];
-    shell = pkgs.zsh;
     packages = with pkgs; [
       alejandra
       bat

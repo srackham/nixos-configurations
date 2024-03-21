@@ -93,8 +93,6 @@
     ];
   };
 
-  # programs.zsh.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.guest = {
     uid = 1000;
@@ -119,6 +117,7 @@
       brave
       xclip
       deno
+      gnucash
       gnumake
       tesseract
       chezmoi
@@ -126,7 +125,7 @@
       eza
       firefox
       gnome.dconf-editor
-      gnome.gnome-terminal
+      # gnome.gnome-terminal
       gnome.gnome-tweaks
       jq
       libreoffice

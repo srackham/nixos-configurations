@@ -5,7 +5,7 @@
 
 # I added server backup using rsync.
 
-CONF_DIR=$HOME/nixos/
+CONF_DIR=$HOME/nixos-configuration/
 # SERVER_DIR=$HOME/share/backups/nixos/$CONF_DIR
 
 set -e

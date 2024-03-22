@@ -6,7 +6,7 @@
 # I added server backup using rsync.
 
 CONF_DIR=$HOME/nixos/
-SERVER_DIR=$HOME/share/backups/nixos/$CONF_DIR
+# SERVER_DIR=$HOME/share/backups/nixos/$CONF_DIR
 
 set -e
 
@@ -20,4 +20,6 @@ git commit -am "$msg"
 popd
 
 # Backup ~/nixos/ to server.
-rsync -azH --delete --info=progress2 $CONF_DIR $SERVER_DIR
+# rsync -azH --delete --info=progress2 $CONF_DIR $SERVER_DIR
+
+git push

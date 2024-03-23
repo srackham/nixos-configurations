@@ -117,6 +117,7 @@
       brave
       xclip
       deno
+      fzf
       gnucash
       gnumake
       tesseract

@@ -60,6 +60,12 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # IPP Everywhere printer detection (see https://nixos.wiki/wiki/Printing).
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;

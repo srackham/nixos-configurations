@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
+#
+# Distrubution agnostic script that installs configuration settings
+# not managed by configuration.nix
+#
 
-# Configuration settings not managed by configuration.nix
-#
-# - Configures GNOME and applications.
-# - Can be run on non-NixOS distributions.
-#
+# Create local chezmoi repo, pull from Github, then update dotfiles.
+if [ ! -d "$HOME/.local/share/chezmoi" ]; then
+    chezmoi init --apply https://github.com/srackham/dotfiles.git
+fi
 
 # Load GNOME desktop window manager custom key bindings. Created with:
 #

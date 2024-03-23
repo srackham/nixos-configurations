@@ -16,7 +16,9 @@ git diff
 echo "Rebuilding NixOS..."
 sudo nixos-rebuild switch
 msg=$(nixos-rebuild list-generations --json | jq -r '.[] | select(.current == true) | "gen=\(.generation)   date=\(.date)   nixos=\(.nixosVersion)   kernel=\(.kernelVersion)"')
+set +e  # Don't exit if there's nothing to commit i.e. it was done manually).
 git commit -am "$msg"
+set -e
 git push
 popd
 

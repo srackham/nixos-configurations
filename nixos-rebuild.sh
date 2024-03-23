@@ -17,9 +17,8 @@ echo "Rebuilding NixOS..."
 sudo nixos-rebuild switch
 msg=$(nixos-rebuild list-generations --json | jq -r '.[] | select(.current == true) | "gen=\(.generation)   date=\(.date)   nixos=\(.nixosVersion)   kernel=\(.kernelVersion)"')
 git commit -am "$msg"
+git push
 popd
 
 # Backup ~/nixos/ to server.
 # rsync -azH --delete --info=progress2 $CONF_DIR $SERVER_DIR
-
-git push

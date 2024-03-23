@@ -60,6 +60,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  hardware.printers.ensureDefaultPrinter = "Brother_HL_2140_series_nuc1";
   # IPP Everywhere printer detection (see https://nixos.wiki/wiki/Printing).
   services.avahi = {
     enable = true;

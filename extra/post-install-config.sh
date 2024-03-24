@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Distrubution agnostic script that installs configuration settings
-# not managed by configuration.nix
+# for srackham that are not managed by configuration.nix
 #
 
 # Create local chezmoi repo, pull from Github, then update dotfiles.

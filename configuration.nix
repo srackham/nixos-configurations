@@ -123,10 +123,12 @@
       bat
       brave
       xclip
+      dart
       deno
       fzf
       gnucash
       gnumake
+      go
       tesseract
       chezmoi
       evince
@@ -138,6 +140,7 @@
       jq
       libreoffice
       menulibre
+      nodejs
       nushell
       ripgrep
       vlc

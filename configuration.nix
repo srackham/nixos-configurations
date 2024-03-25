@@ -96,7 +96,7 @@
       # "*/5 * * * *      srackham    date >> /tmp/cron.log"
 
       # Copy local projects to/from server.
-      "20 8,14,18  * * * srackham /home/srackham/bin/copy-projects.sh > /dev/null"
+      # "20 8,14,18  * * * srackham /home/srackham/bin/copy-projects.sh > /dev/null"
     ];
   };
 
@@ -259,6 +259,12 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
+
   # From https://nixos-and-flakes.thiscute.world/nixos-with-flakes/other-useful-tips#managing-the-configuration-with-git
   # Limit the number of generations to keep
   boot.loader.systemd-boot.configurationLimit = 10;
@@ -277,4 +283,5 @@
   # Refer to the following link for more details:
   # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
   nix.settings.auto-optimise-store = true;
+
 }

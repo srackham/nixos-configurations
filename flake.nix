@@ -11,12 +11,14 @@
     nixpkgs,
     ...
   } @ inputs: {
-    # The host name is `nixos`.
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-      ];
+    nixosConfigurations = {
+      # The host name is `nixos`.
+      nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+        ];
+      };
     };
   };
 }

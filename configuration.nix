@@ -122,29 +122,29 @@
       alejandra
       bat
       brave
-      xclip
+      chezmoi
       dart
       deno
-      fzf
-      gnucash
-      gnumake
-      go
-      tesseract
-      chezmoi
       evince
       eza
       firefox
+      fzf
       gnome.dconf-editor
-      # gnome.gnome-terminal
       gnome.gnome-tweaks
+      gnucash
+      gnumake
+      go
+      htop
       jq
       libreoffice
       menulibre
       nodejs
       nushell
       ripgrep
+      tesseract
       vlc
       vscode
+      xclip
     ];
   };
   users.groups.srackham = {

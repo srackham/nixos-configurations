@@ -118,6 +118,7 @@
     description = "Stuart Rackham";
     group = "srackham";
     extraGroups = ["users" "networkmanager" "wheel"];
+    hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
     packages = with pkgs; [
       alejandra
       bat
@@ -158,6 +159,7 @@
     description = "Peggy Lee";
     group = "peggy";
     extraGroups = ["users" "networkmanager" "wheel"];
+    hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
     packages = with pkgs; [
       firefox
     ];

@@ -124,6 +124,7 @@
       bat
       brave
       chezmoi
+      conda
       dart
       deno
       evince

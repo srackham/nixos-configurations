@@ -45,6 +45,25 @@
     LC_TIME = "en_NZ.UTF-8";
   };
 
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    coreutils-full
+    cron
+    git
+    killall
+    lsb-release
+    neofetch
+    nfs-utils
+    rclone
+    vim
+    wget
+    zsh
+  ];
+
+  # Set the global environment variables in /etc/set-environment
+  environment.variables.EDITOR = "vim";
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -172,22 +191,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    coreutils-full
-    cron
-    git
-    killall
-    lsb-release
-    neofetch
-    nfs-utils
-    rclone
-    vim
-    wget
-    zsh
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -290,4 +290,17 @@
   # Refer to the following link for more details:
   # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
   nix.settings.auto-optimise-store = true;
+
+  # sudo rules.
+  security.sudo.extraRules = [
+    {
+      users = ["srackham"]; # Users that don't require sudo password.
+      commands = [
+        {
+          command = "ALL";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
 }

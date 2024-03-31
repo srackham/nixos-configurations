@@ -45,8 +45,7 @@
     LC_TIME = "en_NZ.UTF-8";
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Global packages for all users.
   environment.systemPackages = with pkgs; [
     coreutils-full
     cron
@@ -60,7 +59,6 @@
     wget
     zsh
   ];
-
   # Set the global environment variables in /etc/set-environment
   environment.variables.EDITOR = "vim";
 
@@ -259,6 +257,7 @@
     "d /home/srackham/share 0755 srackham users"
     "L /home/srackham/bin - srackham users - /home/srackham/share/bin"
     "L /home/srackham/doc - srackham users - /home/srackham/share/doc"
+    "L /home/srackham/projects - srackham users - /home/srackham/share/projects"
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
     # Create local projects directory.
     "d /home/srackham/local 0755 srackham users"

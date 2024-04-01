@@ -159,6 +159,7 @@
       menulibre
       nodejs
       nushell
+      remmina
       ripgrep
       tesseract
       vlc
@@ -277,7 +278,7 @@
   boot.loader.systemd-boot.configurationLimit = 10;
   # boot.loader.grub.configurationLimit = 10;
 
-  # Perform garbage collection weekly to maintain low disk usage
+  # Perform garbage collection weekly to maintain low disk usage.
   nix.gc = {
     automatic = true;
     dates = "weekly";

@@ -149,6 +149,7 @@
       firefox
       fzf
       gnome.dconf-editor
+      gnome.eog
       gnome.gnome-tweaks
       gnucash
       gnumake

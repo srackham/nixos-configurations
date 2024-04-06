@@ -117,6 +117,8 @@
     ];
   };
 
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.guest = {
     uid = 1000;
@@ -136,6 +138,7 @@
     group = "srackham";
     extraGroups = ["users" "networkmanager" "wheel"];
     hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
+    shell = pkgs.zsh;
     packages = with pkgs; [
       alejandra
       bat

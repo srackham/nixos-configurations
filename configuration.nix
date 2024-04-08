@@ -149,6 +149,7 @@
       deno
       evince
       eza
+      fd
       firefox
       fzf
       gnome.dconf-editor

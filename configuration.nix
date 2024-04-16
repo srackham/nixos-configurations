@@ -206,8 +206,13 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  # Enable the OpenSSH server.
+  # See https://nixos.wiki/wiki/SSH_public_key_authentication
+  services.openssh = {
+    enable = true;
+    # settings.PasswordAuthentication = true; # Optional, consider key-based authentication instead.
+    # settings.PermitRootLogin = "yes";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

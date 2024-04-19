@@ -23,6 +23,7 @@
   };
 
   # Hardware independent options.
+  # TODO: move these to included `server-configuration.nix` file.
   system.stateVersion = "24.05";
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;

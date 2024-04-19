@@ -119,78 +119,70 @@
 
   programs.zsh.enable = true;
 
-  # Define a user account.
-  users.users.guest = {
-    uid = 1000;
-    isNormalUser = true;
-    description = "Guest User";
-    group = "users";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      firefox
-    ];
-  };
+  users = {
+    mutableUsers = false; # Restore users and groups on system activation.
 
-  users.users.srackham = {
-    uid = 1001;
-    isNormalUser = true;
-    description = "Stuart Rackham";
-    group = "srackham";
-    extraGroups = ["users" "networkmanager" "wheel"];
-    hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-      alejandra
-      bat
-      brave
-      chezmoi
-      conda
-      dart
-      deno
-      evince
-      eza
-      fd
-      firefox
-      fzf
-      gnome.dconf-editor
-      gnome.eog
-      gnome.gnome-tweaks
-      gnucash
-      gnumake
-      go
-      htop
-      jq
-      libreoffice
-      menulibre
-      nodejs
-      nushell
-      remmina
-      ripgrep
-      tesseract
-      vlc
-      vscode
-      xclip
-    ];
-  };
-  users.groups.srackham = {
-    gid = 1001;
-    members = ["srackham"];
-  };
+    users.srackham = {
+      uid = 1001;
+      isNormalUser = true;
+      description = "Stuart Rackham";
+      group = "srackham";
+      extraGroups = ["users" "networkmanager" "wheel"];
+      hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
+      shell = pkgs.zsh;
+      packages = with pkgs; [
+        alejandra
+        bat
+        brave
+        chezmoi
+        conda
+        dart
+        deno
+        evince
+        eza
+        fd
+        firefox
+        fzf
+        gnome.dconf-editor
+        gnome.eog
+        gnome.gnome-tweaks
+        gnucash
+        gnumake
+        go
+        htop
+        jq
+        libreoffice
+        menulibre
+        nodejs
+        nushell
+        remmina
+        ripgrep
+        tesseract
+        vlc
+        vscode
+        xclip
+      ];
+    };
+    groups.srackham = {
+      gid = 1001;
+      members = ["srackham"];
+    };
 
-  users.users.peggy = {
-    uid = 1002;
-    isNormalUser = true;
-    description = "Peggy Lee";
-    group = "peggy";
-    extraGroups = ["users" "networkmanager" "wheel"];
-    hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
-    packages = with pkgs; [
-      firefox
-    ];
-  };
-  users.groups.peggy = {
-    gid = 1002;
-    members = ["peggy"];
+    users.peggy = {
+      uid = 1002;
+      isNormalUser = true;
+      description = "Peggy Lee";
+      group = "peggy";
+      extraGroups = ["users" "networkmanager" "wheel"];
+      hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
+      packages = with pkgs; [
+        firefox
+      ];
+    };
+    groups.peggy = {
+      gid = 1002;
+      members = ["peggy"];
+    };
   };
 
   # Allow unfree packages

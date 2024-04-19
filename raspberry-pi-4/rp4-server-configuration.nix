@@ -34,25 +34,24 @@
 
   services.openssh.enable = true;
 
-  environment.systemPackages = with pkgs; [vim];
-  # environment.systemPackages = with pkgs; [
-  #   coreutils-full
-  #   cron
-  #   git
-  #   killall
-  #   lsb-release
-  #   neofetch
-  #   nfs-utils
-  #   rclone
-  #   vim
-  #   wget
-  #   zsh
-  # ];
+  environment.systemPackages = with pkgs; [
+    coreutils-full
+    cron
+    git
+    killall
+    lsb-release
+    neofetch
+    nfs-utils
+    rclone
+    vim
+    wget
+    zsh
+  ];
 
   programs.zsh.enable = true;
 
   users = {
-    # Restore users and groups on system activation. 
+    # Restore users and groups on system activation.
     mutableUsers = false;
 
     # Server admin account.
@@ -63,7 +62,17 @@
       group = "users";
       extraGroups = ["wheel"];
       hashedPassword = "$6$U1c5Q14zg8w2z4zX$E1RJgFUZ67Ls1AQqarR.ZRI31I1kx/tlQCe92aUzkNVp5tu30EJTNfWrIFF0iUcM3aQG/3o77y1YozoLIqTDS/";
+      shell = pkgs.zsh;
       packages = with pkgs; [
+        alejandra
+        bat
+        chezmoi
+        eza
+        fd
+        fzf
+        gnumake
+        htop
+        ripgrep
       ];
     };
 
@@ -75,15 +84,6 @@
       extraGroups = ["users" "wheel"];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
       packages = with pkgs; [
-        # alejandra
-        # bat
-        # chezmoi
-        # eza
-        # fd
-        # fzf
-        # gnumake
-        # htop
-        # ripgrep
       ];
     };
     groups.srackham = {

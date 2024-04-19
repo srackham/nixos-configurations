@@ -34,6 +34,33 @@
 
   services.openssh.enable = true;
 
+  # CUPS print server.
+  # See https://nixos.wiki/wiki/Printing
+  services.printing = {
+    enable = true;
+    drivers = [
+      pkgs.brlaser # Includes Brother HL-2140 driver.
+    ];
+    listenAddresses = ["*:631"];
+    allowFrom = ["all"];
+    browsing = true;
+    defaultShared = true;
+    openFirewall = true;
+    # "Upgrade Required" issue, see https://nixos.wiki/wiki/Printing
+    extraConf = ''
+      DefaultEncryption Never
+    '';
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     coreutils-full
     cron

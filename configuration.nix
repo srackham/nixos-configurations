@@ -119,7 +119,7 @@
 
   programs.zsh.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account.
   users.users.guest = {
     uid = 1000;
     isNormalUser = true;

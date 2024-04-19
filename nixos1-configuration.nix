@@ -9,7 +9,7 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    /etc/nixos/hardware-configuration.nix
+    ./nixos1-hardware-configuration.nix
   ];
 
   # Bootloader.

@@ -28,6 +28,16 @@
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
+  # Perform garbage collection weekly.
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 4w";
+  };
+
+  # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
+  nix.settings.auto-optimise-store = true;
+
   networking = {
     networkmanager.enable = true;
     hostName = "rpi1";
@@ -74,6 +84,18 @@
     vim
     wget
     zsh
+  ];
+
+  security.sudo.extraRules = [
+    {
+      users = ["srackham"]; # Users that don't require sudo password.
+      commands = [
+        {
+          command = "ALL";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
   ];
 
   programs.zsh.enable = true;

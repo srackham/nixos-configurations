@@ -88,7 +88,7 @@
       isNormalUser = true;
       description = "System Administrator";
       group = "users";
-      extraGroups = ["wheel"];
+      extraGroups = ["users" "networkmanager" "wheel"];
       hashedPassword = "$6$U1c5Q14zg8w2z4zX$E1RJgFUZ67Ls1AQqarR.ZRI31I1kx/tlQCe92aUzkNVp5tu30EJTNfWrIFF0iUcM3aQG/3o77y1YozoLIqTDS/";
       shell = pkgs.zsh;
       packages = with pkgs; [
@@ -109,9 +109,19 @@
       isNormalUser = true;
       description = "Stuart Rackham";
       group = "srackham";
-      extraGroups = ["users" "wheel"];
+      extraGroups = ["users" "networkmanager" "wheel"];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
+      shell = pkgs.zsh;
       packages = with pkgs; [
+        alejandra
+        bat
+        chezmoi
+        eza
+        fd
+        fzf
+        gnumake
+        htop
+        ripgrep
       ];
     };
     groups.srackham = {

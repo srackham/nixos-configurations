@@ -82,28 +82,6 @@
     # Restore users and groups on system activation.
     mutableUsers = false;
 
-    # Server admin account.
-    users.super = {
-      uid = 1000;
-      isNormalUser = true;
-      description = "System Administrator";
-      group = "users";
-      extraGroups = ["users" "networkmanager" "wheel"];
-      hashedPassword = "$6$U1c5Q14zg8w2z4zX$E1RJgFUZ67Ls1AQqarR.ZRI31I1kx/tlQCe92aUzkNVp5tu30EJTNfWrIFF0iUcM3aQG/3o77y1YozoLIqTDS/";
-      shell = pkgs.zsh;
-      packages = with pkgs; [
-        alejandra
-        bat
-        chezmoi
-        eza
-        fd
-        fzf
-        gnumake
-        htop
-        ripgrep
-      ];
-    };
-
     users.srackham = {
       uid = 1001;
       isNormalUser = true;

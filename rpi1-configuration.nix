@@ -14,18 +14,16 @@
     };
   };
 
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "ext4";
-      options = ["noatime"];
-    };
-    "/files" = {
-      # Samsung 2TB USB drive, partition 1 containing NAS data.
-      device = "/dev/disk/by-uuid/10fcd726-ccff-4cb6-8b34-21b3d7c554ce";
-      fsType = "ext4";
-      options = ["noatime"];
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/NIXOS_SD";
+    fsType = "ext4";
+    options = ["noatime"];
+  };
+  fileSystems."/files" = {
+    # Samsung 2TB USB drive, partition 1 containing NAS data.
+    device = "/dev/disk/by-uuid/10fcd726-ccff-4cb6-8b34-21b3d7c554ce";
+    fsType = "ext4";
+    options = ["noatime"];
   };
 
   # Hardware independent options.
@@ -86,6 +84,7 @@
     neofetch
     nfs-utils
     rclone
+    rsnapshot
     vim
     wget
     zsh
@@ -103,6 +102,65 @@
     }
   ];
 
+  # Windows file sharing.
+  # https://nixos.wiki/wiki/Samba
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    openFirewall = true;
+    extraConfig = ''
+      workgroup = NUCLEUS
+      server string = %h server
+    '';
+    shares = {
+      public = {
+        path = "/files/public";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force create mode" = "0664";
+        "force directory mode" = "0775";
+        "ea support" = "no";
+      };
+    };
+  };
+
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  # NFS server.
+  # https://nixos.wiki/wiki/NFS
+  fileSystems."/export/public" = {
+    device = "/files/public";
+    options = ["bind"];
+  };
+
+  fileSystems."/export/srackham" = {
+    device = "/files/users/srackham";
+    options = ["bind"];
+  };
+
+  services.nfs.server.enable = true;
+  services.nfs.server.exports = ''
+    /export           192.168.1.0/24(rw,fsid=0,no_subtree_check,no_root_squash)
+    /export/public    192.168.1.0/24(rw,nohide,insecure,no_subtree_check,no_root_squash)
+    /export/srackham  192.168.1.0/24(rw,nohide,insecure,no_subtree_check,no_root_squash)
+  '';
+
+  systemd.tmpfiles.rules = [
+    # See `man 5 tmpfiles.d`.
+    # Create NFS bind mount points.
+    "d /export 0755 root root"
+    "d /export/public 0755 root root"
+    "d /export/srackham 0755 root root"
+  ];
+
+  networking.firewall.allowedTCPPorts = [2049];
+
+  #
+  # Users
+  #
   programs.zsh.enable = true;
 
   users = {

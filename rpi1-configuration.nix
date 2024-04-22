@@ -178,22 +178,23 @@
     /export/srackham  192.168.1.0/24(rw,nohide,insecure,no_subtree_check,no_root_squash)
   '';
 
+  networking.firewall.allowedTCPPorts = [2049];
+
+  # Setup necessary directories and files.
   systemd.tmpfiles.rules = [
     # See `man 5 tmpfiles.d`.
     # Create NFS bind mount points.
     "d /export 0755 root root"
     "d /export/public 0755 root root"
-    "d /export/srackham 0755 root root"
+    "d /export/srackham 0755 srackham users"
     # Create Samba share paths.
     "d /files 0755 root root"
     "d /files/backups 0755 root root"
-    "d /files/public 0777 root root"
+    "d /files/public 0755 root root"
     "d /files/users 0755 root root"
     "d /files/users/peggy 0755 peggy users"
     "d /files/users/srackham 0755 srackham users"
   ];
-
-  networking.firewall.allowedTCPPorts = [2049];
 
   #
   # Users

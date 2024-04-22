@@ -184,6 +184,13 @@
     "d /export 0755 root root"
     "d /export/public 0755 root root"
     "d /export/srackham 0755 root root"
+    # Create Samba share paths.
+    "d /files 0755 root root"
+    "d /files/backups 0755 root root"
+    "d /files/public 0777 root root"
+    "d /files/users 0755 root root"
+    "d /files/users/peggy 0755 peggy users"
+    "d /files/users/srackham 0755 srackham users"
   ];
 
   networking.firewall.allowedTCPPorts = [2049];
@@ -215,6 +222,7 @@
         gnumake
         htop
         ripgrep
+        tree
       ];
     };
     groups.srackham = {

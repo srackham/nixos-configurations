@@ -10,6 +10,8 @@ NixOS configuration files and build helpers.
 ```
 alias mknixos="sudo nixos-rebuild -I nixos-config=$HOME/nixos-configurations/$HOST-configuration.nix"
 ```
+- `extra/post-install-config.sh` is a distrubution agnostic shell script that installs configuration settings that are not managed by Nix (dotfiles and GNOME desktop shortcuts).
+
 
 ## Configurations
 Listed by host name:

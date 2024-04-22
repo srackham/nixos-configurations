@@ -111,15 +111,45 @@
     extraConfig = ''
       workgroup = NUCLEUS
       server string = %h server
+      passwd program =
     '';
     shares = {
       public = {
         path = "/files/public";
+        "writable" = "yes";
         "create mask" = "0644";
         "directory mask" = "0755";
         "force create mode" = "0664";
         "force directory mode" = "0775";
         "ea support" = "no";
+        "hide dot files" = "no";
+        "hide special files" = "yes";
+        "store dos attributes" = "no";
+        "guest ok" = "yes";
+      };
+      srackham = {
+        path = "/files/users/srackham";
+        "writable" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force create mode" = "0664";
+        "force directory mode" = "0775";
+        "ea support" = "no";
+        "hide dot files" = "no";
+        "hide special files" = "yes";
+        "store dos attributes" = "no";
+      };
+      peggy = {
+        path = "/files/users/peggy";
+        "writable" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force create mode" = "0664";
+        "force directory mode" = "0775";
+        "ea support" = "no";
+        "hide dot files" = "no";
+        "hide special files" = "yes";
+        "store dos attributes" = "no";
       };
     };
   };

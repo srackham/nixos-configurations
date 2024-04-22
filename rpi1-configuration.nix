@@ -143,7 +143,7 @@
 
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
-    /export           192.168.1.0/24(rw,fsid=0,no_subtree_check,no_root_squash)
+    /export           192.168.1.0/24(rw,fsid=root,no_subtree_check,no_root_squash)
     /export/public    192.168.1.0/24(rw,nohide,insecure,no_subtree_check,no_root_squash)
     /export/srackham  192.168.1.0/24(rw,nohide,insecure,no_subtree_check,no_root_squash)
   '';

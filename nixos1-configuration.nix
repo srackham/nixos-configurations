@@ -158,6 +158,7 @@
         remmina
         ripgrep
         tesseract
+        tree
         vlc
         vscode
         xclip

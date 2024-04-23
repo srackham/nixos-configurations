@@ -59,7 +59,6 @@
 
   environment.systemPackages = with pkgs; [
     coreutils-full
-    cron
     git
     killall
     lsb-release

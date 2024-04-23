@@ -8,6 +8,9 @@
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
+  time.timeZone = "Pacific/Auckland";
+  i18n.defaultLocale = "en_NZ.UTF-8";
+
   # NAS data.
   fileSystems."/files" = {
     # Samsung 2TB USB drive containing NAS files.

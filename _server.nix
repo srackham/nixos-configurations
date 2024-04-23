@@ -1,3 +1,4 @@
+# Server services, packages and users.
 {
   config,
   pkgs,

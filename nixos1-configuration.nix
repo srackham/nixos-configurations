@@ -48,7 +48,6 @@
   # Global packages for all users.
   environment.systemPackages = with pkgs; [
     coreutils-full
-    cron
     git
     killall
     lsb-release
@@ -109,7 +108,7 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      # Test job.
+      # Run test job every 5 min.
       # "*/5 * * * *      srackham    date >> /tmp/cron.log"
 
       # Copy local projects to/from server.

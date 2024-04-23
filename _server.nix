@@ -10,6 +10,8 @@
 
   # NAS data.
   fileSystems."/files" = {
+    # Samsung 2TB USB drive containing NAS files.
+    device = "/dev/disk/by-label/NAS_DATA";
     fsType = "ext4";
     options = ["noatime"];
   };

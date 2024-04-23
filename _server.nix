@@ -8,6 +8,12 @@
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
+  # NAS data.
+  fileSystems."/files" = {
+    fsType = "ext4";
+    options = ["noatime"];
+  };
+
   networking.networkmanager.enable = true;
 
   services.openssh.enable = true;

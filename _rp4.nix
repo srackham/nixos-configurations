@@ -14,10 +14,4 @@
     fsType = "ext4";
     options = ["noatime"];
   };
-  fileSystems."/files" = {
-    # Samsung 2TB USB drive, partition 1 containing NAS data.
-    device = "/dev/disk/by-uuid/10fcd726-ccff-4cb6-8b34-21b3d7c554ce";
-    fsType = "ext4";
-    options = ["noatime"];
-  };
 }

@@ -111,6 +111,9 @@
       # Run test job every 5 min.
       # "*/5 * * * *      srackham    date >> /tmp/cron.log"
 
+      # Email test.
+      # "*/5 * * * *      srackham    echo Test email from cron"
+
       # Copy local projects to/from server.
       # "20 8,14,18  * * * srackham /home/srackham/bin/copy-projects.sh > /dev/null"
     ];
@@ -144,6 +147,7 @@
         fzf
         gnome.dconf-editor
         gnome.eog
+        gnome.gnome-terminal
         gnome.gnome-tweaks
         gnucash
         gnumake

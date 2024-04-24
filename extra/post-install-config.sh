@@ -12,13 +12,19 @@ fi
 if $(which dconf); then
     # Load GNOME desktop window manager custom key bindings. Created with:
     #
-    #   dconf dump /org/gnome/desktop/wm/keybindings/ >keybindings.txt
+    #   dconf dump /org/gnome/desktop/wm/keybindings/ >keybindings.dconf
     #
-    dconf load /org/gnome/desktop/wm/keybindings/ <keybindings.txt
+    dconf load /org/gnome/desktop/wm/keybindings/ <keybindings.dconf
 
     # Load GNOME desktop media custom key bindings. Created with:
     #
-    #   dconf dump /org/gnome/settings-daemon/plugins/media-keys/ >media-keys.txt
+    #   dconf dump /org/gnome/settings-daemon/plugins/media-keys/ >media-keys.dconf
     #
-    dconf load /org/gnome/settings-daemon/plugins/media-keys/ <media-keys.txt
+    dconf load /org/gnome/settings-daemon/plugins/media-keys/ <media-keys.dconf
+
+    # Load GNOME Terminal profiles. Created with:
+    #
+    #   dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
+    #
+    dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
 fi

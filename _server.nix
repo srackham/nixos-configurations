@@ -33,6 +33,24 @@
   # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
   nix.settings.auto-optimise-store = true;
 
+  # msmtp SMTP mail client.
+  programs.msmtp = {
+    enable = true;
+    defaults = {
+      port = 587;
+      tls = true;
+      auth = true;
+    };
+    accounts = {
+      default = {
+        host = "smtp.gmail.com";
+        passwordeval = "cat /secrets/gmail";
+        user = "srackham";
+        from = "srackham@gmail.com";
+      };
+    };
+  };
+
   # CUPS print server.
   # See https://nixos.wiki/wiki/Printing
   services.printing = {

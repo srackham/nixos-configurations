@@ -58,6 +58,9 @@
     wget
     zsh
   ];
+
+  programs.zsh.enable = true;
+
   # Set the global environment variables in /etc/set-environment
   environment.variables.EDITOR = "vim";
 
@@ -118,8 +121,6 @@
       # "20 8,14,18  * * * srackham /home/srackham/bin/copy-projects.sh > /dev/null"
     ];
   };
-
-  programs.zsh.enable = true;
 
   users = {
     mutableUsers = false; # Restore users and groups on system activation.

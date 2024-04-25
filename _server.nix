@@ -92,6 +92,8 @@
     zsh
   ];
 
+  programs.zsh.enable = true;
+
   security.sudo.extraRules = [
     {
       users = ["srackham"]; # Users that don't require sudo password.
@@ -206,51 +208,51 @@
   #
   # Users
   #
-  programs.zsh.enable = true;
+  users = {
+    # Restore users and groups on system activation.
+    mutableUsers = false;
 
-  users.users.root.hashedPassword = "$6$.fFbfmrL8YBmPkGo$JMSFT9XK.1CcY7vzfvuTMs9L1eiJPpT/EtFuJDKZhPdpKpIjAX7qYLD2AF4.8LMTRaNaP4fH8C52A4lhU9SQ1.";
+    users.root.hashedPassword = "$6$.fFbfmrL8YBmPkGo$JMSFT9XK.1CcY7vzfvuTMs9L1eiJPpT/EtFuJDKZhPdpKpIjAX7qYLD2AF4.8LMTRaNaP4fH8C52A4lhU9SQ1.";
 
-  # Restore users and groups on system activation.
-  users.mutableUsers = false;
+    users.srackham = {
+      uid = 1001;
+      isNormalUser = true;
+      description = "Stuart Rackham";
+      group = "srackham";
+      extraGroups = ["users" "networkmanager" "wheel"];
+      hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
+      shell = pkgs.zsh;
+      packages = with pkgs; [
+        alejandra
+        bat
+        chezmoi
+        eza
+        fd
+        fzf
+        gnumake
+        htop
+        ripgrep
+        tree
+      ];
+    };
+    groups.srackham = {
+      gid = 1001;
+      members = ["srackham"];
+    };
 
-  users.users.srackham = {
-    uid = 1001;
-    isNormalUser = true;
-    description = "Stuart Rackham";
-    group = "srackham";
-    extraGroups = ["users" "networkmanager" "wheel"];
-    hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-      alejandra
-      bat
-      chezmoi
-      eza
-      fd
-      fzf
-      gnumake
-      htop
-      ripgrep
-      tree
-    ];
-  };
-  users.groups.srackham = {
-    gid = 1001;
-    members = ["srackham"];
-  };
-
-  users.users.peggy = {
-    uid = 1002;
-    isNormalUser = true;
-    description = "Peggy Lee";
-    group = "peggy";
-    extraGroups = ["users" "wheel"];
-    hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
-    packages = with pkgs; [
-    ];
-  };
-  users.groups.peggy = {
-    gid = 1002;
-    members = ["peggy"];
+    users.peggy = {
+      uid = 1002;
+      isNormalUser = true;
+      description = "Peggy Lee";
+      group = "peggy";
+      extraGroups = ["users" "wheel"];
+      hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
+      packages = with pkgs; [
+      ];
+    };
+    groups.peggy = {
+      gid = 1002;
+      members = ["peggy"];
+    };
   };
 }

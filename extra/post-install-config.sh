@@ -17,19 +17,19 @@ if command -v dconf >/dev/null 2>&1; then
 
     # Load GNOME desktop window manager custom key bindings. Created with:
     #
-    #   dconf dump /org/gnome/desktop/wm/keybindings/ >keybindings.dconf
+    #   dconf dump /org/gnome/desktop/wm/keybindings/ > extra/keybindings.dconf
     #
     dconf load /org/gnome/desktop/wm/keybindings/ < $script_dir/keybindings.dconf
 
     # Load GNOME desktop media custom key bindings. Created with:
     #
-    #   dconf dump /org/gnome/settings-daemon/plugins/media-keys/ >media-keys.dconf
+    #   dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > extra/media-keys.dconf
     #
     dconf load /org/gnome/settings-daemon/plugins/media-keys/ < $script_dir/media-keys.dconf
 
     # Load GNOME Terminal profiles. Created with:
     #
-    #   dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
+    #   dconf dump /org/gnome/terminal/legacy/profiles:/ > extra/gnome-terminal-profiles.dconf
     #
     dconf load /org/gnome/terminal/legacy/profiles:/ < $script_dir/gnome-terminal-profiles.dconf
 fi

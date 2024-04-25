@@ -124,6 +124,8 @@
   users = {
     mutableUsers = false; # Restore users and groups on system activation.
 
+    users.root.hashedPassword = "$6$jVrup09FS2JN4pvA$U1cKoXVRv78gzVS2vn8DJuE44aHkZ7IpVqsT/5N5TlkBoiLgbMvlDRKSeszYMtbURJrqQ5nOkCdnaEcoeqYlg1";
+
     users.srackham = {
       uid = 1001;
       isNormalUser = true;

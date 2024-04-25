@@ -23,15 +23,18 @@
 
   services.openssh.enable = true;
 
-  # Perform garbage collection weekly.
+  # Manage disk usage.
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 4w";
   };
 
-  # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
   nix.settings.auto-optimise-store = true;
+
+  services.journald.extraConfig = ''
+    SystemMaxUse=2G
+  '';
 
   # msmtp SMTP mail client.
   programs.msmtp = {

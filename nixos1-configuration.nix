@@ -266,9 +266,6 @@
     "L /home/srackham/doc - srackham users - /home/srackham/share/doc"
     "L /home/srackham/projects - srackham users - /home/srackham/share/projects"
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
-    # Create local projects directory.
-    "d /home/srackham/local 0755 srackham users"
-    "d /home/srackham/local/projects 0755 srackham users"
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

@@ -196,6 +196,11 @@
     "d /files/users 0755 root root"
     "d /files/users/peggy 0755 peggy users"
     "d /files/users/srackham 0755 srackham users"
+    # Create symlinks to shared user data.
+    "L /home/srackham/bin - srackham users - /files/users/srackham/bin"
+    "L /home/srackham/doc - srackham users - /files/users/srackham/doc"
+    "L /home/srackham/projects - srackham users - /files/users/srackham/projects"
+    "L /home/srackham/tmp - srackham users - /files/users/srackham/tmp"
   ];
 
   #

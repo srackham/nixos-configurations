@@ -22,6 +22,19 @@
   networking.networkmanager.enable = true;
 
   services.openssh.enable = true;
+  services.openssh.settings.PermitRootLogin ="yes";
+
+  security.sudo.extraRules = [
+    {
+      users = ["srackham"]; # Users that don't require sudo password.
+      commands = [
+        {
+          command = "ALL";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
 
   # Manage disk usage.
   nix.gc = {
@@ -96,18 +109,6 @@
   ];
 
   programs.zsh.enable = true;
-
-  security.sudo.extraRules = [
-    {
-      users = ["srackham"]; # Users that don't require sudo password.
-      commands = [
-        {
-          command = "ALL";
-          options = ["NOPASSWD"];
-        }
-      ];
-    }
-  ];
 
   # Windows file sharing.
   # https://nixos.wiki/wiki/Samba

@@ -198,7 +198,7 @@
   services.openssh = {
     enable = true;
     # settings.PasswordAuthentication = true; # Optional, consider key-based authentication instead.
-    # settings.PermitRootLogin = "yes";
+    settings.PermitRootLogin = "yes";
   };
 
   # Open ports in the firewall.

@@ -297,4 +297,22 @@
       ];
     }
   ];
+
+  # msmtp SMTP mail client.
+  programs.msmtp = {
+    enable = true;
+    defaults = {
+      port = 587;
+      tls = true;
+      auth = true;
+    };
+    accounts = {
+      default = {
+        host = "smtp.gmail.com";
+        passwordeval = "cat /secrets/gmail";
+        user = "srackham";
+        from = "srackham@gmail.com";
+      };
+    };
+  };
 }

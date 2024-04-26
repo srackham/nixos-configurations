@@ -98,6 +98,7 @@
   # Enable cron service.
   services.cron = {
     enable = true;
+    mailto = "srackham@gmail.com";
     systemCronJobs = [
       # Run test job every 5 min.
       # "*/5 * * * *      srackham    date >> /tmp/cron.log"

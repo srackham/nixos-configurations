@@ -191,6 +191,9 @@
   # Setup necessary directories and files.
   systemd.tmpfiles.rules = [
     # See `man 5 tmpfiles.d`.
+    # Create removable media mount points.
+    "d /media 0755 root root"
+    "d /media/backups 0755 root root"
     # Create NFS bind mount points.
     "d /export 0755 root root"
     "d /export/public 0777 root root"

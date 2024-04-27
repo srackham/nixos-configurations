@@ -252,6 +252,8 @@
   };
   systemd.tmpfiles.rules = [
     # Create the mount points and symlinks if they don't exist (see `man 5 tmpfiles.d`).
+    "d /media 0755 root root"
+    "d /media/backups 0755 root root"
     "d /home/srackham/public 0755 srackham users"
     "d /home/srackham/share 0755 srackham users"
     "L /home/srackham/bin - srackham users - /home/srackham/share/bin"

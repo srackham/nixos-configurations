@@ -49,6 +49,28 @@
     SystemMaxUse=2G
   '';
 
+  # rsnapshot backups.
+  services.rsnapshot = {
+    enable = true;
+    enableManualRsnapshot = true;
+    # NOTE: Tabs must separate all config elements, and that there must be a trailing slash on the end of every directory.
+    extraConfig = ''
+      snapshot_root	/files/backups
+      no_create_root	1
+
+      verbose	2
+      loglevel	3
+
+      retain	hourly	6
+      retain	daily	7
+      retain	weekly	4
+      retain	monthly	6
+      backup	/files/	./	exclude=/aquota.*,exclude=/backups/
+      backup	/home/	./
+      backup	/etc/	./
+    '';
+  };
+
   # msmtp SMTP mail client.
   programs.msmtp = {
     enable = true;

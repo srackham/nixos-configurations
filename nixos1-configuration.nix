@@ -1,5 +1,4 @@
 # TODO 30-Apr-2024: refactor into nixos1-configuration.nix, _desktop.nix, _vbox.nix
-
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).

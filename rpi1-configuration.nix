@@ -17,10 +17,16 @@
       # "*/5 * * * *      srackham    echo Test email from cron"
 
       # Daily logs summary
-      "50 7 * * * root /home/srackham/bin/log-digest.sh"
+      "15 8 * * * srackham /home/srackham/bin/log-digest.sh"
+
+      # cryptor portfolio valuation
+      # TODO: Once in production on Intel server:
+      #       * Put `-force` back in first cryptor.arm64 command.
+      #       * Rename cryptor.arm64 to cryptor (amd64).
+      "10 8 * * * srackham /home/srackham/bin/cryptor.arm64 valuate -currency nzd -confdir /home/srackham/bin/.cryptor && /home/srackham/bin/cryptor.arm64 valuate -currency nzd -aggregate -confdir /home/srackham/bin/.cryptor && logger -t cryptor-valuation -p user.info 'cryptor valuation completed successfully' || logger -t cryptor-valuation -p user.err 'cryptor valuation failed'"
 
       # rsnapshot backups
-      "15 */4 * * * root /run/current-system/sw/bin/rsnapshot hourly"
+      "20 */4 * * * root /run/current-system/sw/bin/rsnapshot hourly"
       "0 11 * * * root /run/current-system/sw/bin/rsnapshot daily"
       "0 10 * * 2 root /run/current-system/sw/bin/rsnapshot weekly"
       "30 11 1 * * root /run/current-system/sw/bin/rsnapshot monthly"

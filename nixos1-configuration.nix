@@ -144,6 +144,7 @@
         gnome.eog
         gnome.gnome-terminal
         gnome.gnome-tweaks
+        google-chrome
         gnucash
         gnumake
         go
@@ -151,6 +152,7 @@
         jq
         libreoffice
         menulibre
+        nixpkgs-fmt
         nodejs
         nushell
         remmina

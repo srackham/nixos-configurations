@@ -6,6 +6,10 @@ A set of NixOS configuration files and build helpers.
 - `extra/post-install-config.sh` is a distribution agnostic shell script that installs configuration settings that are not managed by Nix (dotfiles and GNOME desktop shortcuts).
 
 
+## TODO
+- Move from channels to flake-based configurations.
+
+
 ## Usage
 1. If you haven't already done so, you will need to install and log in to NixOS on the target machine.
 
@@ -27,7 +31,10 @@ A set of NixOS configuration files and build helpers.
 - `nixos1`: GNOME desktop VirtualBox guest.
 - `rpi1`: Raspberry Pi 4 NAS server (CUPS, NFS, SMB).
 
-Files imported by host configuration files:
+Nix modules imported by host configuration files:
 
 - `_rp4.nix`: Raspberry Pi 4 specific.
 - `_server.nix`: services, packages and users.
+
+A comprehensive look at NixOS configuration modularity can be found here:
+[How to Start Adding Modularity to your NixOS Config](https://www.youtube.com/watch?v=bV3hfalcSKs).

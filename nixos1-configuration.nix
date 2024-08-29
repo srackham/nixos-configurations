@@ -159,9 +159,11 @@
         ripgrep
         tesseract
         tree
+        viu
         vlc
         vscode
         xclip
+        zoxide
       ];
     };
     groups.srackham = {

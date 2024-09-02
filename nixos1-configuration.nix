@@ -128,6 +128,7 @@
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
       shell = pkgs.zsh;
       packages = with pkgs; [
+        alacritty
         alejandra
         bat
         brave
@@ -148,6 +149,7 @@
         gnucash
         gnumake
         go
+        helix
         htop
         jq
         libreoffice

@@ -2,11 +2,10 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }:
 let
   unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
@@ -56,9 +55,9 @@ in
     zsh
   ];
 
-fonts.packages = with pkgs; [
-  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-];
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
 
   programs.zsh.enable = true;
 
@@ -134,7 +133,7 @@ fonts.packages = with pkgs; [
       isNormalUser = true;
       description = "Stuart Rackham";
       group = "srackham";
-      extraGroups = ["users" "networkmanager" "wheel" "systemd-journal"];
+      extraGroups = [ "users" "networkmanager" "wheel" "systemd-journal" ];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
       shell = pkgs.zsh;
       packages = with pkgs; [
@@ -180,7 +179,7 @@ fonts.packages = with pkgs; [
     };
     groups.srackham = {
       gid = 1001;
-      members = ["srackham"];
+      members = [ "srackham" ];
     };
 
     users.peggy = {
@@ -188,7 +187,7 @@ fonts.packages = with pkgs; [
       isNormalUser = true;
       description = "Peggy Lee";
       group = "peggy";
-      extraGroups = ["users" "networkmanager" "wheel"];
+      extraGroups = [ "users" "networkmanager" "wheel" ];
       hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
       packages = with pkgs; [
         firefox
@@ -196,7 +195,7 @@ fonts.packages = with pkgs; [
     };
     groups.peggy = {
       gid = 1002;
-      members = ["peggy"];
+      members = [ "peggy" ];
     };
   };
 
@@ -237,24 +236,26 @@ fonts.packages = with pkgs; [
 
   # SJR: 7-Mar-2024
   # https://discourse.nixos.org/t/does-anybody-have-working-automatic-resizing-in-virtualbox/7391/13
-  services.xserver.videoDrivers = lib.mkForce ["vmware" "virtualbox" "modesetting"];
+  services.xserver.videoDrivers = lib.mkForce [ "vmware" "virtualbox" "modesetting" ];
   services.xserver.displayManager.gdm.wayland = false; # VBox requires X.
-  systemd.user.services = let
-    vbox-client = desc: flags: {
-      description = "VirtualBox Guest: ${desc}";
+  systemd.user.services =
+    let
+      vbox-client = desc: flags: {
+        description = "VirtualBox Guest: ${desc}";
 
-      wantedBy = ["graphical-session.target"];
-      requires = ["dev-vboxguest.device"];
-      after = ["dev-vboxguest.device"];
+        wantedBy = [ "graphical-session.target" ];
+        requires = [ "dev-vboxguest.device" ];
+        after = [ "dev-vboxguest.device" ];
 
-      unitConfig.ConditionVirtualization = "oracle";
+        unitConfig.ConditionVirtualization = "oracle";
 
-      serviceConfig.ExecStart = "${config.boot.kernelPackages.virtualboxGuestAdditions}/bin/VBoxClient -fv ${flags}";
+        serviceConfig.ExecStart = "${config.boot.kernelPackages.virtualboxGuestAdditions}/bin/VBoxClient -fv ${flags}";
+      };
+    in
+    {
+      virtualbox-resize = vbox-client "Resize" "--vmsvga";
+      virtualbox-clipboard = vbox-client "Clipboard" "--clipboard";
     };
-  in {
-    virtualbox-resize = vbox-client "Resize" "--vmsvga";
-    virtualbox-clipboard = vbox-client "Clipboard" "--clipboard";
-  };
 
   virtualisation.virtualbox.guest = {
     enable = true;
@@ -281,7 +282,7 @@ fonts.packages = with pkgs; [
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -310,11 +311,11 @@ fonts.packages = with pkgs; [
   # sudo rules.
   security.sudo.extraRules = [
     {
-      users = ["srackham"]; # Users that don't require sudo password.
+      users = [ "srackham" ]; # Users that don't require sudo password.
       commands = [
         {
           command = "ALL";
-          options = ["NOPASSWD"];
+          options = [ "NOPASSWD" ];
         }
       ];
     }

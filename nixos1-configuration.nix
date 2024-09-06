@@ -7,7 +7,13 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+let
+  unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
+    config = config.nixpkgs.config;
+  };
+in
+{
   imports = [
     # Include the results of the hardware scan.
     ./nixos1-hardware-configuration.nix
@@ -153,7 +159,7 @@ fonts.packages = with pkgs; [
         gnucash
         gnumake
         go
-        helix
+        unstable.helix
         htop
         jq
         libreoffice

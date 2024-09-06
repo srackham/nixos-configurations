@@ -50,6 +50,10 @@
     zsh
   ];
 
+fonts.packages = with pkgs; [
+  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+];
+
   programs.zsh.enable = true;
 
   # Set the global environment variables in /etc/set-environment

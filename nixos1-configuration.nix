@@ -166,6 +166,7 @@ in
         nushell
         remmina
         ripgrep
+        sd
         tesseract
         tree
         viu

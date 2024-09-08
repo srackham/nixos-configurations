@@ -8,9 +8,7 @@
 , ...
 }:
 let
-  unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {
-    config = config.nixpkgs.config;
-  };
+  unstable = import <nixos-unstable> { };
 in
 {
   imports = [

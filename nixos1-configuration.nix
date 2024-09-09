@@ -159,6 +159,7 @@ in
         unstable.helix
         htop
         jq
+        unstable.lapce
         libreoffice
         menulibre
         nixpkgs-fmt

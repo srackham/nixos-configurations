@@ -160,6 +160,7 @@ in
         htop
         jq
         unstable.lapce
+        lazygit
         libreoffice
         menulibre
         nixpkgs-fmt
@@ -169,6 +170,7 @@ in
         ripgrep
         sd
         tesseract
+        tmux
         tree
         viu
         vlc

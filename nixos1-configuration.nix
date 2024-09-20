@@ -169,6 +169,7 @@ in
         remmina
         ripgrep
         sd
+        shfmt
         tesseract
         tmux
         tree

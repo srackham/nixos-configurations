@@ -163,6 +163,7 @@ in
         lazygit
         libreoffice
         menulibre
+        nil
         nixpkgs-fmt
         nodejs
         nushell

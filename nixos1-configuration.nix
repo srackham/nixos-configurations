@@ -176,6 +176,7 @@ in
         viu
         vlc
         vscode
+        wezterm
         xclip
         zoxide
       ];

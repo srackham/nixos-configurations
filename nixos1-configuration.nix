@@ -162,6 +162,7 @@ in
         unstable.lapce
         lazygit
         libreoffice
+        marksman
         menulibre
         nil
         nixpkgs-fmt
@@ -174,6 +175,7 @@ in
         tesseract
         tmux
         tree
+        unstable.uv
         viu
         vlc
         vscode

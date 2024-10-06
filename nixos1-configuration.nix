@@ -142,6 +142,7 @@ in
         chezmoi
         conda
         dart
+        unstable.delve
         deno
         evince
         eza
@@ -156,6 +157,8 @@ in
         gnucash
         gnumake
         go
+        unstable.golangci-lint-langserver
+        unstable.gopls
         unstable.helix
         htop
         jq

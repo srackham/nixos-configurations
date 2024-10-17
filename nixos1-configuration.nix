@@ -157,6 +157,8 @@ in
         gnucash
         gnumake
         go
+        gotests
+        unstable.golangci-lint
         unstable.golangci-lint-langserver
         unstable.gopls
         unstable.helix
@@ -164,13 +166,16 @@ in
         jq
         unstable.lapce
         lazygit
+        gcc
         libreoffice
         marksman
         menulibre
+        unstable.neovim
         nil
         nixpkgs-fmt
         nodejs
         nushell
+        recoll
         remmina
         ripgrep
         sd

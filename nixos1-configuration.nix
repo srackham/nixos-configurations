@@ -145,10 +145,12 @@ in
         unstable.delve
         deno
         evince
+        unstable.exercism
         eza
         fd
         firefox
         fzf
+        unstable.gleam unstable.erlang unstable.rebar3
         gnome.dconf-editor
         gnome.eog
         gnome.gnome-terminal

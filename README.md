@@ -3,7 +3,7 @@
 A set of NixOS configuration files and build helpers.
 
 - NixOS build files named like `<hostname>-configuration.nix`, included files are named like `_*.nix`.
-- `extra/post-install-config.sh` is a distribution agnostic shell script that installs configuration settings that are not managed by Nix (dotfiles and GNOME desktop shortcuts).
+- Use the `exported/post-install-config.sh` script in the chezmoi repo to install distro agnostic config options not managed by the NixOS configuration.
 
 
 ## TODO

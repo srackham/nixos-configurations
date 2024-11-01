@@ -180,6 +180,7 @@ in
         recoll
         remmina
         ripgrep
+        rustup
         sd
         shfmt
         tesseract

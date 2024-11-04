@@ -116,8 +116,8 @@ in
       # Email test.
       # "*/5 * * * *      srackham    echo Test email from cron"
 
-      # Copy local projects to/from server.
-      # "20 8,14,18  * * * srackham /home/srackham/bin/copy-projects.sh > /dev/null"
+      # Mirror local projects to server.
+      "30 * * * *      srackham    /home/srackham/bin/sync-local.sh > /dev/null"
     ];
   };
 

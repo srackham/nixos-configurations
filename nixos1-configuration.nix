@@ -76,7 +76,12 @@ in
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [
+      pkgs.cnijfilter2  # For Canon TR4500 printer
+    ];
+  };
   hardware.printers.ensureDefaultPrinter = "Brother_HL_2140_series_nuc1";
   # IPP Everywhere printer detection (see https://nixos.wiki/wiki/Printing).
   services.avahi = {

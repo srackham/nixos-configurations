@@ -182,7 +182,7 @@ in
         menulibre
         unstable.neovim
         nil
-        nixpkgs-fmt
+        nixfmt-rfc-style
         nodejs
         nushell
         recoll

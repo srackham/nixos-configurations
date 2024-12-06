@@ -2,10 +2,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 let
   unstable = import <nixos-unstable> { };
@@ -53,9 +54,7 @@ in
     zsh
   ];
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
   programs.zsh.enable = true;
 
@@ -79,7 +78,7 @@ in
   services.printing = {
     enable = true;
     drivers = [
-      pkgs.cnijfilter2  # For Canon TR4500 printer
+      pkgs.cnijfilter2 # For Canon TR4500 printer
     ];
   };
   hardware.printers.ensureDefaultPrinter = "Brother_HL_2140_series_nuc1";
@@ -139,7 +138,12 @@ in
       isNormalUser = true;
       description = "Stuart Rackham";
       group = "srackham";
-      extraGroups = [ "users" "networkmanager" "wheel" "systemd-journal" ];
+      extraGroups = [
+        "users"
+        "networkmanager"
+        "wheel"
+        "systemd-journal"
+      ];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
       shell = pkgs.zsh;
       packages = with pkgs; [
@@ -158,7 +162,9 @@ in
         fd
         firefox
         fzf
-        unstable.gleam unstable.erlang unstable.rebar3
+        unstable.gleam
+        unstable.erlang
+        unstable.rebar3
         gnome.dconf-editor
         gnome.eog
         gnome.gnome-terminal
@@ -213,11 +219,13 @@ in
       isNormalUser = true;
       description = "Peggy Lee";
       group = "peggy";
-      extraGroups = [ "users" "networkmanager" "wheel" ];
-      hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
-      packages = with pkgs; [
-        firefox
+      extraGroups = [
+        "users"
+        "networkmanager"
+        "wheel"
       ];
+      hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
+      packages = with pkgs; [ firefox ];
     };
     groups.peggy = {
       gid = 1002;
@@ -262,7 +270,11 @@ in
 
   # SJR: 7-Mar-2024
   # https://discourse.nixos.org/t/does-anybody-have-working-automatic-resizing-in-virtualbox/7391/13
-  services.xserver.videoDrivers = lib.mkForce [ "vmware" "virtualbox" "modesetting" ];
+  services.xserver.videoDrivers = lib.mkForce [
+    "vmware"
+    "virtualbox"
+    "modesetting"
+  ];
   services.xserver.displayManager.gdm.wayland = false; # VBox requires X.
   systemd.user.services =
     let
@@ -308,13 +320,16 @@ in
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-  ];
+  # programs.nix-ld.libraries = with pkgs; [
+  #   # Add any missing dynamic libraries for unpackaged programs
+  #   # here, NOT in environment.systemPackages
+  # ];
 
   # From https://nixos-and-flakes.thiscute.world/nixos-with-flakes/other-useful-tips#managing-the-configuration-with-git
   # Limit the number of generations to keep

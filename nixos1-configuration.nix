@@ -47,6 +47,7 @@ in
     neofetch
     nfs-utils
     rclone
+    sane-backends
     vim
     wget
     unzip
@@ -88,6 +89,8 @@ in
     nssmdns4 = true;
     openFirewall = true;
   };
+
+  hardware.sane.enable = true; # Enables support for SANE scanners
 
   # Enable sound with pipewire.
   sound.enable = true;

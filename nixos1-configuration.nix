@@ -93,7 +93,6 @@ in
   hardware.sane.enable = true; # Enables support for SANE scanners
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -167,10 +166,10 @@ in
         unstable.gleam
         unstable.erlang
         unstable.rebar3
-        gnome.dconf-editor
-        gnome.eog
-        gnome.gnome-terminal
-        gnome.gnome-tweaks
+        dconf-editor
+        eog
+        gnome-terminal
+        gnome-tweaks
         google-chrome
         gnucash
         gnumake

@@ -48,9 +48,10 @@ in
     nfs-utils
     rclone
     sane-backends
+    unzip
+    usbutils
     vim
     wget
-    unzip
     zip
     zsh
   ];

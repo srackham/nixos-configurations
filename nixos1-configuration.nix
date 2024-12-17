@@ -164,7 +164,7 @@ in
         firefox
         fzf
         unstable.gleam
-        unstable.erlang
+        unstable.erlang_27
         unstable.rebar3
         dconf-editor
         eog

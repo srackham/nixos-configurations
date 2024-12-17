@@ -175,9 +175,10 @@ in
         gnumake
         go
         gotests
-        unstable.golangci-lint
-        unstable.golangci-lint-langserver
-        unstable.gopls
+        golangci-lint
+        golangci-lint-langserver
+        gopls
+        gotools
         unstable.helix
         htop
         jq

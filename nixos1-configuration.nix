@@ -193,6 +193,7 @@ in
         nixfmt-rfc-style
         nodejs
         nushell
+        prettierd
         recoll
         remmina
         ripgrep

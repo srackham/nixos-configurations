@@ -151,6 +151,7 @@ in
       shell = pkgs.zsh;
       packages = with pkgs; [
         alacritty
+        alsa-utils
         bat
         brave
         chezmoi

@@ -188,6 +188,7 @@ in
         lazygit
         gcc
         libreoffice
+        lua
         marksman
         menulibre
         unstable.neovim
@@ -198,6 +199,7 @@ in
         prettierd
         recoll
         remmina
+        rustdesk
         ripgrep
         rustup
         sd

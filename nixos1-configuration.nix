@@ -195,6 +195,7 @@ in
         nil
         nixfmt-rfc-style
         nodejs
+        npm-check-updates
         nushell
         prettierd
         recoll
@@ -211,6 +212,7 @@ in
         viu
         vlc
         vscode
+        vscode-js-debug
         wezterm
         xclip
         zoxide

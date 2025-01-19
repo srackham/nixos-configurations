@@ -181,6 +181,7 @@ in
         golangci-lint-langserver
         gopls
         gotools
+        gpick
         unstable.helix
         htop
         jq

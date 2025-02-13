@@ -175,6 +175,7 @@ in
         google-chrome
         gnucash
         gnumake
+        gnuplot_qt
         go
         gotests
         golangci-lint

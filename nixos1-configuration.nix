@@ -48,6 +48,7 @@ in
     nfs-utils
     rclone
     sane-backends
+    sshpass
     unzip
     usbutils
     vim
@@ -170,6 +171,7 @@ in
         unstable.rebar3
         dconf-editor
         eog
+        gh
         gnome-terminal
         gnome-tweaks
         google-chrome

@@ -41,6 +41,7 @@ in
   # Global packages for all users.
   environment.systemPackages = with pkgs; [
     coreutils-full
+    file
     git
     killall
     lsb-release
@@ -172,6 +173,7 @@ in
         dconf-editor
         eog
         gh
+        gimp
         gnome-terminal
         gnome-tweaks
         google-chrome

@@ -195,6 +195,7 @@ in
         gcc
         libreoffice
         lua
+        luaPackages.ldoc
         marksman
         menulibre
         unstable.neovim

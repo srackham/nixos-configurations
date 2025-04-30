@@ -159,17 +159,17 @@ in
         chezmoi
         conda
         dart
-        unstable.delve
+        delve
         deno
         evince
-        unstable.exercism
+        exercism
         eza
         fd
         firefox
         fzf
-        unstable.gleam
-        unstable.erlang_27
-        unstable.rebar3
+        gleam
+        erlang_27
+        rebar3
         dconf-editor
         eog
         gh
@@ -187,10 +187,10 @@ in
         gopls
         gotools
         gpick
-        unstable.helix
+        helix
         htop
         jq
-        unstable.lapce
+        lapce
         lazygit
         gcc
         libreoffice
@@ -198,7 +198,7 @@ in
         luaPackages.ldoc
         marksman
         menulibre
-        unstable.neovim
+        neovim
         nil
         nixfmt-rfc-style
         nodejs
@@ -215,7 +215,7 @@ in
         tesseract
         tmux
         tree
-        unstable.uv
+        uv
         viu
         vlc
         vscode

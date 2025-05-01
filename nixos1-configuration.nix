@@ -319,12 +319,10 @@ in
   fileSystems."/home/srackham/public" = {
     device = "nuc1:/public";
     fsType = "nfs";
-    options = [ "sync" ];
   };
   fileSystems."/home/srackham/share" = {
     device = "nuc1:/srackham";
     fsType = "nfs";
-    options = [ "sync" ];
   };
   systemd.tmpfiles.rules = [
     # Create the mount points and symlinks if they don't exist (see `man 5 tmpfiles.d`).

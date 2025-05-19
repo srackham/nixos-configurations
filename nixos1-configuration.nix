@@ -129,7 +129,8 @@ in
       "30 * * * *      srackham    /home/srackham/bin/sync-local.sh > /dev/null"
 
       # Update recoll document index.
-      "15 9,12,18 * * *    srackham    /home/srackham/bin/recollindex.sh > /dev/null"
+      # "15 9,12,18 * * *    srackham    /home/srackham/bin/recollindex.sh > /dev/null"
+      "15 9,12,18 * * *    srackham    /home/srackham/bin/recollindex.sh"
     ];
   };
 
@@ -190,7 +191,6 @@ in
         helix
         htop
         jq
-        lapce
         lazygit
         gcc
         libreoffice
@@ -204,6 +204,7 @@ in
         nodejs
         npm-check-updates
         nushell
+        obsidian
         prettierd
         recoll
         remmina

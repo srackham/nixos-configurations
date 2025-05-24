@@ -56,6 +56,8 @@ in
     wget
     zip
     zsh
+    xorg.xmodmap
+    xorg.xev
   ];
 
   programs.zsh.enable = true;

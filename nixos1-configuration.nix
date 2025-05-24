@@ -10,7 +10,6 @@
 }:
 let
   unstable = import <nixos-unstable> { };
-  nixos-2505 = import <nixos-25.05> { };
 in
 {
   imports = [
@@ -59,8 +58,6 @@ in
     zsh
   ];
 
-  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
-
   programs.zsh.enable = true;
 
   # Set the global environment variables in /etc/set-environment
@@ -97,8 +94,8 @@ in
   hardware.sane.enable = true; # Enables support for SANE scanners
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -197,8 +194,9 @@ in
         libreoffice
         lua
         luaPackages.ldoc
-        nixos-2505.marksman
+        marksman
         menulibre
+        nerd-fonts.jetbrains-mono
         neovim
         nil
         nixfmt-rfc-style

@@ -10,6 +10,7 @@
 }:
 let
   unstable = import <nixos-unstable> { };
+  nixos-2505 = import <nixos-25.05> { };
 in
 {
   imports = [
@@ -196,7 +197,7 @@ in
         libreoffice
         lua
         luaPackages.ldoc
-        marksman
+        nixos-2505.marksman
         menulibre
         neovim
         nil

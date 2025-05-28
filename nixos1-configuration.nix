@@ -126,11 +126,10 @@ in
       # "*/5 * * * *      srackham    echo Test email from cron"
 
       # Mirror local projects to server.
-      "30 * * * *      srackham    /home/srackham/bin/sync-local.sh > /dev/null"
+      "30 * * * * srackham /home/srackham/bin/sync-local.sh >/dev/null"
 
       # Update recoll document index.
-      # "15 9,12,18 * * *    srackham    /home/srackham/bin/recollindex.sh > /dev/null"
-      "15 9,12,18 * * *    srackham    /home/srackham/bin/recollindex.sh"
+      "35 * * * * srackham /home/srackham/bin/recollindex.sh >/dev/null"
     ];
   };
 

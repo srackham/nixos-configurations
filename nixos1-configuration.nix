@@ -43,10 +43,12 @@ in
     coreutils-full
     file
     git
+    iotop
     killall
     lsb-release
     neofetch
     nfs-utils
+    nethogs
     rclone
     sane-backends
     sshpass

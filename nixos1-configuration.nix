@@ -179,6 +179,7 @@ in
         eog
         gh
         gimp
+        git-graph
         gnome-terminal
         gnome-tweaks
         google-chrome
@@ -195,6 +196,8 @@ in
         helix
         htop
         jq
+        jujutsu
+        jjui
         lazygit
         gcc
         libreoffice

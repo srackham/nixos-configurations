@@ -212,8 +212,10 @@ in
         nushell
         obsidian
         obsidian-export
+        poppler-utils
         prettierd
         recoll
+        rclone
         remmina
         rustdesk
         ripgrep

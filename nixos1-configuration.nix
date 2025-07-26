@@ -161,7 +161,6 @@ in
         alsa-utils
         bat
         brave
-        busybox
         chezmoi
         conda
         dart

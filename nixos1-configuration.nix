@@ -270,6 +270,10 @@ in
   #   enableSSHSupport = true;
   # };
 
+  systemd.user.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   # List services that you want to enable:
 
   # Enable the OpenSSH server.

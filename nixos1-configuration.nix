@@ -166,6 +166,7 @@ in
         dart
         delve
         deno
+        dig
         evince
         exercism
         eza

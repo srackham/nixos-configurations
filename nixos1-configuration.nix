@@ -178,6 +178,7 @@ in
         rebar3
         dconf-editor
         eog
+        ffmpeg
         gh
         gimp
         gnome-terminal

@@ -216,6 +216,7 @@ in
         obsidian-export
         poppler-utils
         prettierd
+        python3
         recoll
         rclone
         remmina

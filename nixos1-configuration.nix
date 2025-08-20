@@ -159,6 +159,7 @@ in
       packages = with pkgs; [
         alacritty
         alsa-utils
+        argc  # Required for AIChat functions (https://github.com/sigoden/llm-functions)
         bat
         brave
         chezmoi

@@ -225,6 +225,7 @@ in
         ripgrep
         rustup
         sd
+        shellcheck
         shfmt
         tesseract
         tmux

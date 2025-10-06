@@ -175,7 +175,7 @@ in
         firefox
         fzf
         gleam
-        erlang_27
+        erlang
         rebar3
         dconf-editor
         eog

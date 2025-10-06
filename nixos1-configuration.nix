@@ -159,7 +159,7 @@ in
       packages = with pkgs; [
         alacritty
         alsa-utils
-        argc  # Required for AIChat functions (https://github.com/sigoden/llm-functions)
+        argc # Required for AIChat functions (https://github.com/sigoden/llm-functions)
         bat
         brave
         chezmoi
@@ -209,6 +209,7 @@ in
         nerd-fonts.jetbrains-mono
         neovim
         nil
+        nixd
         nixfmt-rfc-style
         nodejs
         npm-check-updates
@@ -363,7 +364,7 @@ in
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs.
-    xorg.libxcb   # Required for goose
+    xorg.libxcb # Required for goose
   ];
 
   # From https://nixos-and-flakes.thiscute.world/nixos-with-flakes/other-useful-tips#managing-the-configuration-with-git

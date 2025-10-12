@@ -223,7 +223,7 @@ in
         recoll
         rclone
         remmina
-        rustdesk
+        rustdesk-flutter
         ripgrep
         rustup
         sd

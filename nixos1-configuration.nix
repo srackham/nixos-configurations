@@ -40,12 +40,15 @@ in
 
   # Global packages for all users.
   environment.systemPackages = with pkgs; [
+    btop
     coreutils-full
     file
     git
     iotop
+    iperf
     killall
     lsb-release
+    lsof
     neofetch
     nfs-utils
     nethogs
@@ -162,7 +165,6 @@ in
         argc # Required for AIChat functions (https://github.com/sigoden/llm-functions)
         bat
         brave
-        btop
         chezmoi
         conda
         dart

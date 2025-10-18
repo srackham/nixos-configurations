@@ -7,10 +7,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./xps27-hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -129,7 +129,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
-  
   ####################################################
   # The following customises the default configuration
   ####################################################
@@ -190,9 +189,12 @@
     users.guest = {
       isNormalUser = true;
       description = "Guest User";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
       packages = with pkgs; [
-      #  thunderbird
+        #  thunderbird
       ];
     };
 
@@ -201,7 +203,12 @@
       isNormalUser = true;
       description = "Stuart Rackham";
       group = "srackham";
-      extraGroups = ["users" "networkmanager" "wheel" "systemd-journal"];
+      extraGroups = [
+        "users"
+        "networkmanager"
+        "wheel"
+        "systemd-journal"
+      ];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
       shell = pkgs.zsh;
       packages = with pkgs; [
@@ -243,7 +250,7 @@
     };
     groups.srackham = {
       gid = 1001;
-      members = ["srackham"];
+      members = [ "srackham" ];
     };
 
     users.peggy = {
@@ -251,7 +258,11 @@
       isNormalUser = true;
       description = "Peggy Lee";
       group = "peggy";
-      extraGroups = ["users" "networkmanager" "wheel"];
+      extraGroups = [
+        "users"
+        "networkmanager"
+        "wheel"
+      ];
       hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
       packages = with pkgs; [
         firefox
@@ -259,7 +270,7 @@
     };
     groups.peggy = {
       gid = 1002;
-      members = ["peggy"];
+      members = [ "peggy" ];
     };
   };
 
@@ -292,7 +303,10 @@
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -321,11 +335,11 @@
   # sudo rules.
   security.sudo.extraRules = [
     {
-      users = ["srackham"]; # Users that don't require sudo password.
+      users = [ "srackham" ]; # Users that don't require sudo password.
       commands = [
         {
           command = "ALL";
-          options = ["NOPASSWD"];
+          options = [ "NOPASSWD" ];
         }
       ];
     }

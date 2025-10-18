@@ -1,7 +1,8 @@
-{...}: {
+{ ... }:
+{
   imports = [
-    ./_rp4.nix
-    ./_server.nix
+    ../../modules/rp4.nix
+    ../../modules/server.nix
   ];
 
   networking.hostName = "rpi1";

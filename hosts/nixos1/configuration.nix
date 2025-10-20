@@ -63,8 +63,8 @@ in
     wget
     zip
     zsh
-    xorg.xmodmap
-    xorg.xev
+    # xorg.xmodmap
+    # xorg.xev
   ];
 
   programs.zsh.enable = true;
@@ -78,6 +78,18 @@ in
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  # Configure keyboard (X11, Wayland and TTY compatible)
+  services.keyd = {
+    enable = true;
+    keyboards.default.settings = {
+      # Written to /etc/keyd/<keyboard>.conf
+      main = {
+        capslock = "overload(control, esc)"; # Caps Lock as Control when held, Escape when tapped
+        pause = "esc";
+      };
+    };
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {

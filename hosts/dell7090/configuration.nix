@@ -44,6 +44,17 @@
     LC_TIME = "en_NZ.UTF-8";
   };
 
+  # Samsung 2TB USB SSD drive.
+  fileSystems."/data" = {
+    device = "/dev/disk/by-uuid/407fa118-0264-43f0-a265-146bb4f0dadc";
+    fsType = "ext4";
+    options = [
+      "defaults"
+      # This option prevents the boot from failing if the drive is not present.
+      "nofail"
+    ];
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 

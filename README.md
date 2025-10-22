@@ -19,7 +19,7 @@ A set of NixOS configuration files and build helpers.
 4. Rebuild NixOS using the `mknixos` alias:
 
    ```sh
-   alias mknixos="sudo nixos-rebuild -I nixos-config=$HOME/nixos-configurations/hosts/$HOST/configuration.nix"
+   alias mknixos="sudo nixos-rebuild -I nixos-config=$HOME/share/projects/nixos-configurations/hosts/$HOST/configuration.nix"
 
 
    mknixos switch  # Run `nixos-rebuild switch`.

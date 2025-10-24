@@ -45,6 +45,10 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
+  # VirtualBox host configuration.
+  virtualisation.virtualbox.host.enable = true; # Install and configure VirtualBox host.
+  users.users.srackham.extraGroups = [ "vboxusers" ];
+
   # Machine specific programs.
   environment.systemPackages = with pkgs; [
     wl-clipboard

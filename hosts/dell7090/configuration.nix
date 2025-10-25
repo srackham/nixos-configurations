@@ -47,22 +47,12 @@
 
   # VirtualBox host configuration.
   virtualisation.virtualbox.host.enable = true; # Install and configure VirtualBox host.
+  users.users.srackham.extraGroups = [ "vboxusers" ];
 
-  # virt-manager QEMU  host configuration.
-  virtualisation.libvirtd.enable = true; # Enable the libvirt daemon
-  programs.virt-manager.enable = true; # Enable the virt-manager program
-
-  # Machine specific programs and user configuration.
+  # Machine specific programs.
   environment.systemPackages = with pkgs; [
-    qemu
-    virt-manager # Necessary for CLI apps when programs.virt-manager is not enabled.
-    virt-viewer
     wl-clipboard
     # xclip
   ];
 
-  users.users.srackham.extraGroups = [
-    "vboxusers"
-    "libvirtd"
-  ];
 }

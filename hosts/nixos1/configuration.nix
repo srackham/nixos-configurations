@@ -385,19 +385,6 @@ in
   boot.loader.systemd-boot.configurationLimit = 10;
   # boot.loader.grub.configurationLimit = 10;
 
-  # Manage disk usage.
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 4w";
-  };
-
-  nix.settings.auto-optimise-store = true;
-
-  services.journald.extraConfig = ''
-    SystemMaxUse=2G
-  '';
-
   # sudo rules.
   security.sudo.extraRules = [
     {

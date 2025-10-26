@@ -3,7 +3,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   system.stateVersion = "24.05";
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
@@ -16,7 +17,7 @@
     # Samsung 2TB USB drive containing NAS files.
     device = "/dev/disk/by-label/NAS_DATA";
     fsType = "ext4";
-    options = ["noatime"];
+    options = [ "noatime" ];
   };
 
   networking.networkmanager.enable = true;
@@ -26,11 +27,11 @@
 
   security.sudo.extraRules = [
     {
-      users = ["srackham"]; # Users that don't require sudo password.
+      users = [ "srackham" ]; # Users that don't require sudo password.
       commands = [
         {
           command = "ALL";
-          options = ["NOPASSWD"];
+          options = [ "NOPASSWD" ];
         }
       ];
     }
@@ -40,7 +41,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 4w";
+    options = "--delete-older-than 30d";
   };
 
   nix.settings.auto-optimise-store = true;
@@ -96,8 +97,8 @@
     drivers = [
       pkgs.brlaser # Includes Brother HL-2140 driver.
     ];
-    listenAddresses = ["*:631"];
-    allowFrom = ["all"];
+    listenAddresses = [ "*:631" ];
+    allowFrom = [ "all" ];
     browsing = true;
     defaultShared = true;
     openFirewall = true;
@@ -193,12 +194,12 @@
   # https://nixos.wiki/wiki/NFS
   fileSystems."/export/public" = {
     device = "/files/public";
-    options = ["bind"];
+    options = [ "bind" ];
   };
 
   fileSystems."/export/srackham" = {
     device = "/files/users/srackham";
-    options = ["bind"];
+    options = [ "bind" ];
   };
 
   services.nfs.server.enable = true;
@@ -208,7 +209,7 @@
     /export/srackham  192.168.1.0/24(rw,nohide,insecure,no_subtree_check,no_root_squash)
   '';
 
-  networking.firewall.allowedTCPPorts = [2049];
+  networking.firewall.allowedTCPPorts = [ 2049 ];
 
   # Setup necessary directories and files.
   systemd.tmpfiles.rules = [
@@ -248,7 +249,12 @@
       isNormalUser = true;
       description = "Stuart Rackham";
       group = "srackham";
-      extraGroups = ["users" "networkmanager" "wheel" "systemd-journal"];
+      extraGroups = [
+        "users"
+        "networkmanager"
+        "wheel"
+        "systemd-journal"
+      ];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
       shell = pkgs.zsh;
       packages = with pkgs; [
@@ -266,7 +272,7 @@
     };
     groups.srackham = {
       gid = 1001;
-      members = ["srackham"];
+      members = [ "srackham" ];
     };
 
     users.peggy = {
@@ -274,14 +280,17 @@
       isNormalUser = true;
       description = "Peggy Lee";
       group = "peggy";
-      extraGroups = ["users" "wheel"];
+      extraGroups = [
+        "users"
+        "wheel"
+      ];
       hashedPassword = "$6$SKQodRom5EDQwLBb$hKZKuTSlIC2vtNrBb89.b01bFh2lzXaUfrLmx7qos1WrEwZqhorX54jf.rLWbXF4pMtMf6BhBDXW19gbqlrnv/";
       packages = with pkgs; [
       ];
     };
     groups.peggy = {
       gid = 1002;
-      members = ["peggy"];
+      members = [ "peggy" ];
     };
   };
 }

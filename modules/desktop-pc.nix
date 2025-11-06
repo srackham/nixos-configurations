@@ -164,6 +164,7 @@
     "d /home/srackham/share 0755 srackham users"
     "L /home/srackham/bin - srackham users - /home/srackham/share/bin"
     "L /home/srackham/doc - srackham users - /home/srackham/share/doc"
+    "L /home/srackham/doc - srackham users - /home/srackham/share/notes"
     "L /home/srackham/projects - srackham users - /home/srackham/share/projects"
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
   ];
@@ -271,6 +272,7 @@
         "networkmanager"
         "wheel"
         "systemd-journal"
+        "video"
       ];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
       shell = pkgs.zsh;

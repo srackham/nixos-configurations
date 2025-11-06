@@ -46,7 +46,10 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
   # VirtualBox host configuration.
-  virtualisation.virtualbox.host.enable = true; # Install and configure VirtualBox host.
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true; # TODO: What exactly do the extensions provide?
+  };
   users.users.srackham.extraGroups = [ "vboxusers" ];
 
   # Machine specific programs.

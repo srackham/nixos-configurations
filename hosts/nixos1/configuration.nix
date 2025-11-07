@@ -11,8 +11,8 @@ let
 in
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./hardware-configuration.nix # Include the results of the hardware scan.
+    # TODO: ../../modules/desktop-pc.nix
   ];
 
   # Bootloader.
@@ -164,8 +164,9 @@ in
       extraGroups = [
         "users"
         "networkmanager"
-        "wheel"
         "systemd-journal"
+        "wheel"
+        "video"
       ];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
       shell = pkgs.zsh;
@@ -230,6 +231,7 @@ in
         obsidian
         obsidian-export
         poppler-utils
+        pulseaudio
         prettierd
         python3
         recoll
@@ -245,6 +247,7 @@ in
         tmux
         tree
         uv
+        v4l-utils
         viu
         vlc
         vscode

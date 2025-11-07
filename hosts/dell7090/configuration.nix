@@ -4,8 +4,7 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./hardware-configuration.nix # Include the results of the hardware scan.
     ../../modules/desktop-pc.nix
   ];
 

@@ -167,6 +167,7 @@
     "L /home/srackham/doc - srackham users - /home/srackham/share/notes"
     "L /home/srackham/projects - srackham users - /home/srackham/share/projects"
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
+    "L /home/srackham/.local/share/backgrounds - srackham users - /home/srackham/share/doc/backgrounds"
   ];
 
   #
@@ -270,8 +271,8 @@
       extraGroups = [
         "users"
         "networkmanager"
-        "wheel"
         "systemd-journal"
+        "wheel"
         "video"
       ];
       hashedPassword = "$6$./rhdw/.5ZMU8j29$SZz6SnmsBoTDAAt2gdiRpvoNgpbuKK53IgQj7R3goQTqrrISKdvwwpLkd9qEIMXD1unaSux3VziGUTcHJpDro1";
@@ -339,6 +340,7 @@
         poppler-utils
         prettierd
         python3
+        pulseaudio
         recoll
         remmina
         rustdesk-flutter
@@ -351,6 +353,7 @@
         tmux
         tree
         uv
+        v4l-utils
         viu
         vlc
         vscode

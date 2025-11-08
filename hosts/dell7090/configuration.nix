@@ -47,7 +47,7 @@
   # VirtualBox host configuration.
   virtualisation.virtualbox.host = {
     enable = true;
-    enableExtensionPack = true; # TODO: What exactly do the extensions provide?
+    enableExtensionPack = true;
   };
   users.users.srackham.extraGroups = [ "vboxusers" ];
 

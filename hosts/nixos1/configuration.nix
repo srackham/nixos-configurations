@@ -176,6 +176,7 @@ in
         argc # Required for AIChat functions (https://github.com/sigoden/llm-functions)
         bat
         brave
+        cheese
         chezmoi
         conda
         dart

@@ -354,6 +354,7 @@
         sd
         shellcheck
         shfmt
+        telegram-desktop
         tesseract
         tmux
         tree

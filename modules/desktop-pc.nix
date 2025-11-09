@@ -93,6 +93,9 @@
   # Enables support for SANE scanners
   hardware.sane.enable = true;
 
+  # Add udev rules to allow Ledger access.
+  hardware.ledger.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -323,6 +326,7 @@
         jujutsu
         lazygit
         gcc
+        ledger-live-desktop
         libreoffice
         lua
         luaPackages.ldoc

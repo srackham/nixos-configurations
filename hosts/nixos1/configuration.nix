@@ -134,20 +134,20 @@ in
     enable = true;
     mailto = "srackham@gmail.com";
     systemCronJobs = [
-      # Run test job every 5 minutes
+      # # Run test job every 5 minutes
       # "*/5 * * * *      srackham    date >> /tmp/cron.log"
-
-      # Email test
+      #
+      # # Email test
       # "*/5 * * * *      srackham    echo Test email from cron"
-
-      # Mirror local projects to server
-      "30 * * * * srackham /home/srackham/bin/sync-local.sh >/dev/null"
-
-      # Update recoll document index
-      "35 * * * * srackham /home/srackham/bin/recollindex.sh >/dev/null"
-
-      # Commit today's notes
-      "55 17 * * * srackham /home/srackham/bin/commit-notes"
+      #
+      # # Mirror local projects to server
+      # "30 * * * * srackham /home/srackham/bin/sync-local.sh >/dev/null"
+      #
+      # # Update recoll document index
+      # "35 * * * * srackham /home/srackham/bin/recollindex.sh >/dev/null"
+      #
+      # # Commit today's notes
+      # "55 17 * * * srackham /home/srackham/bin/commit-notes"
     ];
   };
 
@@ -293,7 +293,7 @@ in
   #   enableSSHSupport = true;
   # };
 
-  systemd.user.extraConfig = ''
+  systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
   '';
 

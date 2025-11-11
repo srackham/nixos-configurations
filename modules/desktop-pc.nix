@@ -50,6 +50,11 @@
   # Services
   #
 
+  # Set a global default timeout for stopping services (the default is 90s).
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -111,30 +116,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable cron service.
-  services.cron = {
-    enable = true;
-    mailto = "srackham@gmail.com";
-    systemCronJobs = [
-      # # Run test job every 5 minutes
-      # "*/5 * * * *      srackham    date >> /tmp/cron.log"
-      #
-      # # Email test
-      # "*/5 * * * *      srackham    echo Test email from cron"
-      #
-      # # Mirror local projects to server
-      # "30 * * * * srackham /home/srackham/bin/sync-local.sh >/dev/null"
-      #
-      # # Update recoll document index
-      # "35 * * * * srackham /home/srackham/bin/recollindex.sh >/dev/null"
-      #
-      # # Commit today's notes
-      # "55 17 * * * srackham /home/srackham/bin/commit-notes"
-    ];
-  };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH server.
   # See https://nixos.wiki/wiki/SSH_public_key_authentication

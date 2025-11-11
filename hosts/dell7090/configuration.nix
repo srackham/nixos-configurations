@@ -57,4 +57,30 @@
     # xclip
   ];
 
+  # Enable cron service.
+  services.cron = {
+    enable = true;
+    mailto = "srackham@gmail.com";
+    systemCronJobs = [
+
+      # NOTE: Don't add cron jobs here, put them in the machine's configuration.nix file.
+      # Verify system cron job installation with `sudo cat /etc/crontab`
+
+      # # Run test job every 5 minutes
+      # "*/5 * * * *      srackham    date >> /tmp/cron.log"
+      #
+      # # Email test
+      # "*/5 * * * *      srackham    echo Test email from cron"
+      #
+      # # Mirror local projects to server
+      # "30 * * * * srackham /home/srackham/bin/sync-local.sh >/dev/null"
+
+      # Update recoll document index
+      "35 * * * * srackham /home/srackham/bin/recollindex.sh >/dev/null"
+
+      # Commit today's notes
+      "55 17 * * * srackham /home/srackham/bin/commit-notes"
+    ];
+  };
+
 }

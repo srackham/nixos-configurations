@@ -173,6 +173,9 @@
     "L /home/srackham/.local/share/backgrounds - srackham users - /home/srackham/share/doc/backgrounds"
   ];
 
+  # Stop the GDM from hibernating the host machine.
+  services.xserver.displayManager.gdm.autoSuspend = false;
+
   #
   # Programs
   #

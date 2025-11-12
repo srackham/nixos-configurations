@@ -80,6 +80,9 @@
 
       # Commit today's notes
       "55 17 * * * srackham /home/srackham/bin/commit-notes"
+
+      # Ping Healthchecks.io
+      "0 */4 * * * root curl -fsS -m 10 --retry 5 -o /dev/null https://hc-ping.com/1f4df795-b3a7-4e69-9a02-dbf138bfcce9"
     ];
   };
 

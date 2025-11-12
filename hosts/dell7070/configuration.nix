@@ -4,7 +4,6 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/desktop-pc.nix
   ];
@@ -46,7 +45,10 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
   # VirtualBox host configuration.
-  virtualisation.virtualbox.host.enable = true; # Install and configure VirtualBox host.
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+  };
   users.users.srackham.extraGroups = [ "vboxusers" ];
 
   # Machine specific programs.

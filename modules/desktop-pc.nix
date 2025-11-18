@@ -336,11 +336,7 @@
         remmina
         rustdesk-flutter
         ripgrep
-        rustc
-        cargo
-        rustfmt
-        clippy
-        rust-analyzer
+        rustup
         sd
         shellcheck
         shfmt

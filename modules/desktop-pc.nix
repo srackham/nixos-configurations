@@ -125,6 +125,10 @@
     enable = true;
     # settings.PasswordAuthentication = true; # Optional, consider key-based authentication instead.
     settings.PermitRootLogin = "yes";
+    extraConfig = ''
+      # Allow WezTerm to set associated environment variables
+      AcceptEnv TERM TERM_PROGRAM TERM_PROGRAM_VERSION COLORTERM WEZTERM_*
+    '';
   };
 
   # Open ports in the firewall.

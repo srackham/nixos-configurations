@@ -193,6 +193,7 @@
     neofetch
     nfs-utils
     nethogs
+    libnotify
     rclone
     sane-backends
     sshpass

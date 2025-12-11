@@ -179,6 +179,13 @@
   # Set the global environment variables in /etc/set-environment
   environment.variables.EDITOR = "vim";
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
+    noto-fonts
+    noto-fonts-emoji
+  ];
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     btop
@@ -191,6 +198,7 @@
     lsb-release
     lsof
     neofetch
+    nerd-fonts.jetbrains-mono
     nfs-utils
     nethogs
     libnotify
@@ -323,7 +331,6 @@
         luaPackages.ldoc
         marksman
         menulibre
-        nerd-fonts.jetbrains-mono
         neovim
         nil
         nixd

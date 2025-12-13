@@ -289,6 +289,7 @@
         chezmoi
         conda
         dart
+        delta
         delve
         deno
         dig

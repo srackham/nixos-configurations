@@ -330,6 +330,7 @@
         libreoffice
         lua
         luaPackages.ldoc
+        stylua
         marksman
         menulibre
         neovim

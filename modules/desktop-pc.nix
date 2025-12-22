@@ -42,27 +42,31 @@
     options = "--delete-older-than 30d";
   };
   nix.settings.auto-optimise-store = true;
-  services.journald.extraConfig = ''
-    SystemMaxUse=2G
-  '';
+  systemd.settings.Manager = {
+    SystemMaxUse = "2G";
+  };
 
   #
   # Services
   #
 
   # Set a global default timeout for stopping services (the default is 90s).
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
+  systemd.settings.Manager = {
+    DefaultTimeoutStopSec = "10s";
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "srackham";
+
+  # Unlock GNOME Keyring to suppress Brave "Choose a password for a new keyring" message.
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
 
   # Configure keyboard (X11, Wayland and TTY compatible)
   services.keyd = {
@@ -161,7 +165,7 @@
   ];
 
   # Stop the GDM from hibernating the host machine.
-  services.xserver.displayManager.gdm.autoSuspend = false;
+  services.displayManager.gdm.autoSuspend = false;
 
   #
   # Programs
@@ -183,7 +187,7 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
   ];
 
   # List packages installed in system profile.

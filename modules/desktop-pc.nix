@@ -64,10 +64,6 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "srackham";
 
-  # Unlock GNOME Keyring to suppress Brave "Choose a password for a new keyring" message.
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.login.enableGnomeKeyring = true;
-
   # Configure keyboard (X11, Wayland and TTY compatible)
   services.keyd = {
     enable = true;

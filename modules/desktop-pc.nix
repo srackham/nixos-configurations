@@ -158,7 +158,7 @@
     "d /home/srackham/share 0755 srackham users"
     "L /home/srackham/bin - srackham users - /home/srackham/share/bin"
     "L /home/srackham/doc - srackham users - /home/srackham/share/doc"
-    "L /home/srackham/doc - srackham users - /home/srackham/share/notes"
+    "L /home/srackham/notes - srackham users - /home/srackham/share/notes"
     "L /home/srackham/projects - srackham users - /home/srackham/share/projects"
     "L /home/srackham/tmp - srackham users - /home/srackham/share/tmp"
     "L /home/srackham/.local/share/backgrounds - srackham users - /home/srackham/share/doc/backgrounds"

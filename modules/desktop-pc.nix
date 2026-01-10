@@ -163,6 +163,10 @@
   # Stop the GDM from hibernating the host machine.
   services.displayManager.gdm.autoSuspend = false;
 
+  services.ollama = {
+    enable = true;
+  };
+
   #
   # Programs
   #
@@ -322,6 +326,7 @@
         gpick
         helix
         htop
+        imagemagick
         jq
         jujutsu
         lazygit

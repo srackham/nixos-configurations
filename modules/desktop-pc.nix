@@ -32,6 +32,19 @@
     # Add any missing dynamic libraries for unpackaged programs.
   ];
 
+  # Enable the NixOS binary cache (an attempt to avoid recompilation of the VirtualBox package)
+  nix.settings = {
+    # List of URLs of substituters (binary caches) to use.
+    # The official NixOS cache is essential for pre-built packages.
+    substituters = [ "https://cache.nixos.org/" ];
+
+    # Public keys for verifying signatures of packages from the substituters.
+    # This key is for cache.nixos.org.
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHd/XFNreh3D/23N4UQadSgvhtgcsRgmN2f/ULhtVKNfo+FGbkKGwnRB8VMd6IEaxGEu/NpxPkPNjDlXNYzQ=="
+    ];
+  };
+
   # Limit the number of generations to keep.
   boot.loader.systemd-boot.configurationLimit = 10;
 

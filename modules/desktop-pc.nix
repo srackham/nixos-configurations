@@ -2,11 +2,6 @@
 
 { config, pkgs, ... }:
 
-let
-  unstable = import (fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz";
-  }) { config = config.nixpkgs.config; };
-in
 {
   # Set your time zone.
   time.timeZone = "Pacific/Auckland";
@@ -169,10 +164,9 @@ in
   # Stop the GDM from hibernating the host machine.
   services.displayManager.gdm.autoSuspend = false;
 
-  # 18-Apr-2026: because I need to run the newer unstable version of Ollama
-  # services.ollama = {
-  #   enable = true;
-  # };
+  services.ollama = {
+    enable = true;
+  };
 
   #
   # Programs
@@ -365,6 +359,7 @@ in
         nushell
         obsidian
         obsidian-export
+        ollama
         poppler-utils
         prettierd
         python3
@@ -390,8 +385,6 @@ in
         wezterm
         zig
         zoxide
-        unstable.openclaw
-        unstable.ollama
       ];
     };
     groups.srackham = {

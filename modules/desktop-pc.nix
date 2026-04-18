@@ -1,6 +1,12 @@
 # Common GNOME Desktop configuration across desktop PCs.
 
 { config, pkgs, ... }:
+
+let
+  unstable = import (fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz";
+  }) { config = config.nixpkgs.config; };
+in
 {
   # Set your time zone.
   time.timeZone = "Pacific/Auckland";
@@ -186,6 +192,11 @@
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
+  # Allowed insecure packages
+  nixpkgs.config.permittedInsecurePackages =  [
+    "openclaw-2026.4.12"
+  ];
+
   # Set the global environment variables in /etc/set-environment
   environment.variables.EDITOR = "vim";
 
@@ -348,7 +359,8 @@
         nil
         nixd
         nixfmt-rfc-style
-        nodejs
+        nodejs_24
+        unstable.openclaw
         npm-check-updates
         nushell
         obsidian

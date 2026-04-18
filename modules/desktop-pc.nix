@@ -169,9 +169,10 @@ in
   # Stop the GDM from hibernating the host machine.
   services.displayManager.gdm.autoSuspend = false;
 
-  services.ollama = {
-    enable = true;
-  };
+  # 18-Apr-2026: because I need to run the newer unstable version of Ollama
+  # services.ollama = {
+  #   enable = true;
+  # };
 
   #
   # Programs
@@ -360,7 +361,6 @@ in
         nixd
         nixfmt-rfc-style
         nodejs_24
-        unstable.openclaw
         npm-check-updates
         nushell
         obsidian
@@ -390,6 +390,8 @@ in
         wezterm
         zig
         zoxide
+        unstable.openclaw
+        unstable.ollama
       ];
     };
     groups.srackham = {

@@ -187,11 +187,6 @@
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
-  # Allowed insecure packages
-  nixpkgs.config.permittedInsecurePackages =  [
-    "openclaw-2026.4.12"
-  ];
-
   # Set the global environment variables in /etc/set-environment
   environment.variables.EDITOR = "vim";
 
@@ -360,6 +355,10 @@
         obsidian
         obsidian-export
         ollama
+        podman
+        podman-compose
+        podman-tui
+        podman-desktop
         poppler-utils
         prettierd
         python3

@@ -164,9 +164,9 @@
   # Stop the GDM from hibernating the host machine.
   services.displayManager.gdm.autoSuspend = false;
 
-  services.ollama = {
-    enable = true;
-  };
+  # services.ollama = {
+  #   enable = true;
+  # };
 
   #
   # Programs
@@ -302,8 +302,8 @@
         dart
         delta
         delve
-        deno
         dig
+        drawing
         evince
         exercism
         eza
@@ -324,7 +324,7 @@
         gnucash
         gnumake
         gnuplot_qt
-        go
+        go_1_26
         gotests
         golangci-lint
         golangci-lint-langserver

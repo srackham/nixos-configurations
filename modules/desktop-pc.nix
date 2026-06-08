@@ -208,7 +208,6 @@
     killall
     lsb-release
     lsof
-    neofetch
     nerd-fonts.jetbrains-mono
     nfs-utils
     nethogs
@@ -315,6 +314,7 @@
         rebar3
         dconf-editor
         eog
+        fastfetch
         ffmpeg
         gh
         gimp
@@ -382,6 +382,7 @@
         vscode
         vscode-js-debug
         wezterm
+        whisper-cpp
         zig
         zoxide
       ];

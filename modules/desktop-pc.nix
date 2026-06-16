@@ -352,7 +352,7 @@
         neovim
         nil
         nixd
-        nixfmt-rfc-style
+        nixfmt
         nodejs_24
         npm-check-updates
         nushell
@@ -380,6 +380,7 @@
         tesseract
         tmux
         tree
+        tree-sitter
         uv
         v4l-utils
         viu

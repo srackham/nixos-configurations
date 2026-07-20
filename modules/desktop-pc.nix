@@ -350,11 +350,13 @@
         marksman
         menulibre
         neovim
+        neovide
         nil
         nixd
         nixfmt
         nodejs_24
         npm-check-updates
+        ntfs3g
         nushell
         obsidian
         obsidian-export

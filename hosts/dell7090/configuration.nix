@@ -79,7 +79,8 @@
       "35 * * * * srackham /home/srackham/bin/recollindex.sh >/dev/null"
 
       # Commit today's notes
-      "55 17 * * * srackham /home/srackham/bin/commit-notes"
+      # 03-Jul-2026: Dropped ~/notes repo, it's was not being used.
+      # "55 17 * * * srackham /home/srackham/bin/commit-notes"
 
       # Ping Healthchecks.io at startup and every 4 hours
       "@reboot root sleep 30 && curl -fsS -m 10 --retry 5 -o /dev/null https://hc-ping.com/1f4df795-b3a7-4e69-9a02-dbf138bfcce9"

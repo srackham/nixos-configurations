@@ -90,7 +90,7 @@
       pkgs.cnijfilter2 # For Canon TR4500 printer
     ];
   };
-  hardware.printers.ensureDefaultPrinter = "Brother_HL_2140_series_nuc1";
+  hardware.printers.ensureDefaultPrinter = "Brother_HL_2140_series_nuc2";
   # IPP Everywhere printer detection (see https://nixos.wiki/wiki/Printing).
   services.avahi = {
     enable = true;
@@ -140,11 +140,11 @@
 
   # Mount NFS shares on server.
   fileSystems."/home/srackham/public" = {
-    device = "nuc1:/public";
+    device = "nuc2:/public";
     fsType = "nfs";
   };
   fileSystems."/home/srackham/share" = {
-    device = "nuc1:/srackham";
+    device = "nuc2:/srackham";
     fsType = "nfs";
   };
   systemd.tmpfiles.rules = [

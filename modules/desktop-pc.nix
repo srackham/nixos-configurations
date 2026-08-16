@@ -178,11 +178,19 @@
     export XDG_DATA_DIRS="$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
   '';
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
   # Configure zsh as an interactive shell
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    syntaxHighlighting.enable = true;
+  };
 
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
@@ -310,6 +318,7 @@
         exercism
         eza
         fd
+        fio
         # firefox
         fzf
         gleam
@@ -334,6 +343,7 @@
         gopls
         gotools
         gpick
+        harper
         helix
         htop
         imagemagick
@@ -361,6 +371,7 @@
         obsidian
         obsidian-export
         ollama
+        parted
         pass
         podman
         podman-compose
@@ -393,6 +404,7 @@
         whisper-cpp
         zig
         zoxide
+        zsh-syntax-highlighting
       ];
     };
     groups.srackham = {

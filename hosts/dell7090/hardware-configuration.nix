@@ -18,6 +18,13 @@
       fsType = "ext4";
     };
 
+  # 2nd nvme: Crucial P2 2TB SSD
+  fileSystems."/run/media/srackham/vms" = {
+    device = "/dev/disk/by-uuid/7cdf8cb8-705c-49bf-b655-b6a0d60c8bf2";
+    fsType = "ext4";
+    options = [ "defaults" "nofail" ];
+  };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/1EEB-EE33";
       fsType = "vfat";

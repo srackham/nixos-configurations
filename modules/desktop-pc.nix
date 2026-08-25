@@ -364,6 +364,7 @@
         nil
         nixd
         nixfmt
+        nmap
         nodejs_24
         npm-check-updates
         ntfs3g
@@ -402,6 +403,7 @@
         vscode-js-debug
         wezterm
         whisper-cpp
+        yt-dlp
         zig
         zoxide
         zsh-syntax-highlighting

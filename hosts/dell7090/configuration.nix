@@ -49,7 +49,7 @@
     enable = true;
     enableExtensionPack = true;
   };
-  users.users.srackham.extraGroups = [ "vboxusers" ];
+  users.extraGroups.vboxusers.members = [ "srackham" ];
 
   # Machine specific programs.
   environment.systemPackages = with pkgs; [

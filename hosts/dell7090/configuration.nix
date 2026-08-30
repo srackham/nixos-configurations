@@ -76,7 +76,7 @@
       # "30 * * * * srackham /home/srackham/bin/sync-local.sh >/dev/null"
 
       # Update recoll document index
-      "35 * * * * srackham /home/srackham/bin/recollindex.sh >/dev/null"
+      # "35 * * * * srackham /home/srackham/bin/recollindex.sh >/dev/null"
 
       # Commit today's notes
       # 03-Jul-2026: Dropped ~/notes repo, it's was not being used.

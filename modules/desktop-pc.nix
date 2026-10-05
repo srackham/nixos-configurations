@@ -62,7 +62,7 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "srackham";
 
   # Configure keyboard (X11, Wayland and TTY compatible)
@@ -142,10 +142,20 @@
   fileSystems."/home/srackham/public" = {
     device = "nuc2:/public";
     fsType = "nfs";
+    options = [
+      "nofail"
+      "x-systemd.mount-timeout=5s"
+      "retry=0"
+    ];
   };
   fileSystems."/home/srackham/share" = {
     device = "nuc2:/srackham";
     fsType = "nfs";
+    options = [
+      "nofail"
+      "x-systemd.mount-timeout=5s"
+      "retry=0"
+    ];
   };
   systemd.tmpfiles.rules = [
     # Create the mount points and symlinks if they don't exist (see `man 5 tmpfiles.d`).
@@ -374,6 +384,7 @@
         ollama
         parted
         pass
+        pixi
         podman
         podman-compose
         podman-tui
@@ -392,6 +403,7 @@
         shfmt
         telegram-desktop
         tesseract
+        tldr
         tmux
         tree
         tree-sitter

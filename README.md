@@ -27,14 +27,10 @@ A set of NixOS configuration files and build helpers.
 
 ## Host Configurations
 
-- `nixos1`: GNOME desktop VirtualBox guest.
-- `dell7090`: Dell Optiplex 7090 SFF desktop PC.
-- `rpi1`: Raspberry Pi 4 NAS server (CUPS, NFS, SMB).
+To create a host configuration:
 
-Nix modules imported by host configuration files:
+- Install NixOS on the host machine.
+- Name the host e.g. `dell5450`. The default host name set by the installer is `nixos` this is changed in the `configuration.nix` files.
+- Create a configuration directory for the host, see _Create a custom NixOS configuration for the target machine_ `/home/srackham/share/notes/nixos-notes.md`
 
-- `./modules/rp4.nix`: Raspberry Pi 4 specific.
-- `./modules/server.nix`: services, packages and users.
-
-A comprehensive look at NixOS configuration modularity can be found here:
 [Modularize NixOS and Home Manager](https://www.youtube.com/watch?v=vYc6IzKvAJQ).

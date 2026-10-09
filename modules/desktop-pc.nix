@@ -339,6 +339,7 @@
         fastfetch
         ffmpeg
         gh
+        ghostty
         gimp
         gnome-terminal
         gnome-tweaks
@@ -401,6 +402,7 @@
         sd
         shellcheck
         shfmt
+        taplo
         telegram-desktop
         tesseract
         tldr

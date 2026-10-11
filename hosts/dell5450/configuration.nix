@@ -7,8 +7,7 @@
 {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    ../../modules/desktop-pc.nix
-    # ./desktop-pc.nix
+    ./desktop-pc.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

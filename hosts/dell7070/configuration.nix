@@ -5,7 +5,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/desktop-pc.nix
+    ./desktop-pc.nix
   ];
 
   # Bootloader.

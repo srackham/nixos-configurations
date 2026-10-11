@@ -12,7 +12,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    # TODO: ../../modules/desktop-pc.nix
+    ./desktop-pc.nix
   ];
 
   # Bootloader.

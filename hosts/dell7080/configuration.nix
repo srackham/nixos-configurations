@@ -30,6 +30,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable WoL
+  networking.interfaces.eno1.wakeOnLan.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

@@ -419,6 +419,7 @@
         vlc
         vscode
         vscode-js-debug
+        wakeonlan
         wezterm
         whisper-cpp
         yt-dlp

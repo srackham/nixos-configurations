@@ -22,6 +22,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable WoL
+  networking.interfaces.enp0s31f6.wakeOnLan.enable = true;
+
   # # Samsung 2TB USB SSD drive.
   # fileSystems."/data" = {
   #   device = "/dev/disk/by-uuid/407fa118-0264-43f0-a265-146bb4f0dadc";
